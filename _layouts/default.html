@@ -13,26 +13,28 @@ title: "Home"
   <link rel="stylesheet" href="/assets/css/code.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Sebastian</div>
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">☰</label>
-      <ul class="menu">
-        <li><a href="/">Über mich</a></li>
-        <li><a href="/skills">Skills</a></li>
-        <li><a href="/lebenslauf">Werdegang</a></li>
-        <li><a href="/projekte">Portfolio</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="page">
+    <header>
+      <nav class="navbar">
+        <div class="logo">Sebastian</div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <ul class="menu">
+          <li><a href="/">Über mich</a></li>
+          <li><a href="/skills">Skills</a></li>
+          <li><a href="/lebenslauf">Werdegang</a></li>
+          <li><a href="/projekte">Portfolio</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    {{ content }}
-  </main>
+    <main>
+      {{ content }}
+    </main>
 
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} Sebastian Zettl</p>
-  </footer>
+    <footer>
+      <p>&copy; {{ site.time | date: "%Y" }} Sebastian Zettl</p>
+    </footer>
+  </div>
 </body>
 </html>
