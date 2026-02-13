@@ -1,8 +1,10 @@
 ---
 title: "Implementierung einer Undo Funktion für den easyBiograph"
 link: https://github.com/fhstp/easybiograph
-technologien: ["Vue.js", "Vuex"]
-layout: project
+tags: ["Vue.js", "Vuex"]
+description: "Implementierung einer Undo Funktion für den easyBiograph"
+pubDate: '2023-10-17'
+heroImage: './easybiograph_01.png'
 ---
 
 ## Einleitung
@@ -16,7 +18,7 @@ Hierbei habe ich mich dann dafür entschieden, eine undo Funktion einzubauen. Zi
 
 Der easyBiograph hatte schon umfassende Funktionen, als ich bei diesem Projekt eingestiegen bin und mitgearbeitet habe. Man kann einen Biografen für eine Person erstellen und auf verschiedenen Eventachsen, welche man auch selbst erstellen kann, die Events eintragen. Auch kann man hineinzoomen und verschiedene Einstellungen treffen. Zum Beispiel das Farbschema der Oberfläche ändern oder zwischen Deutsch und Englisch umschalten. Der Biograf kann auch ausgedruckt werden.
 
-![Appbild](Pasted image 20250716113618.png)
+![Appbild](./easybiograph_01.png)
 
 Der easyBiograph ist in Vue.js geschrieben und die undo Historie speziell verwendet den sogenannten Vuex Store. Dies ist eine Vue.js Library für State Management. Hierbei musste ich nicht von Grund auf ein undo und redo System entwickeln, sondern es gab schon eines im Forschungsprojekt easyNWK, an welchem ich mich orientieren konnte. Auch ein grundsätzliche System für die undo Historie gab es schon im easyBiograph, welches sich anhand dieser Repositories (https://github.com/anthonygore/vuex-undo-redo und https://easynwk.fhstp.ac.at/) orientiert hat. Grundsätzlich wird jede State Änderung (zum Beispiel ein neues Event, Änderungen der Einstellungen, ...) als Translation ausgeführt und als Liste gespeichert, um anhand dieser Liste die Aktion wieder rückgängig zu machen oder wiederherzustellen. 
 
@@ -28,8 +30,8 @@ Hierbei musste ich mir etwas einfallen lassen, wodurch ich trotzdem noch die Tra
 
 Sobald eine dieser Aktionen ausgeführt wurde, habe ich die Transaktionsliste in den localStorage gespeichert und nach dem Laden sofort wieder herausgeholt, damit alle Transaktionen erhalten bleiben. Dies passiert aber nur bei diesen speziellen Einstellungsänderungen und nicht, wenn man die Seite normal verlassen würde, da die normale Erwartungshaltung ist, dass die undo Historie so lange erhalten bleibt, wie man arbeitet.
 
-![Appbild](Pasted image 20250716151653.png)
-![Appbild](Pasted image 20250716151704.png)
+![Appbild](./easybiograph_02.png)
+![Appbild](./easybiograph_03.png)
 
 Sobald ich alles fertig hatte und getestet habe, habe ich eine merge Request im Repository erstellt, damit sich Dipl.-Ing. Mag. Alexander Rind meine Änderung auch anschauen und überprüfen konnte. Nachdem ich noch ein paar von ihm gewünschte Änderungen vorgenommen hatte, war er sehr zufrieden mit meinen Änderungen und hat diese abgenommen.
 ## Fazit

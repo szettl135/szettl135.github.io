@@ -1,8 +1,10 @@
 ---
 title: "Digitale Tierpatenschaften mit NFTs (ERC-1155 Smart Contracts)"
 link: https://github.com/realJanWeiss/zoo-sponsorship
-technologien: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
-layout: project
+tags: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
+description: "Digitale Tierpatenschaften mit NFTs"
+pubDate: '2023-10-17'
+heroImage: './tierpatenschaften_01.png'
 ---
 
 ## Einleitung
@@ -27,7 +29,9 @@ Ich habe teilweise beim Entwickeln und Erlernen des Smart Contracts mitgewirkt. 
 Grundsätzliche Funktionen beinhalten, dass der/die InhaberIn des Contracts, in diesem Fall der Zoo selbst, der einzige ist, welcher Token erstellen kann. Gäste, also andere UserInnen, können dann einen der vom Zoo bereitgestellten Token kaufen, um auf diese Weise das Tier zu adoptieren, wodurch der Token auch in der Kryptowallet des Gastes landet. Auch können die InhaberInnen des Token das Tier wieder zurückgegeben. Zusätzlich gibt es die Standardfunktionen, welche ein ERC-1155 Token beinhalten muss, wie zum Beispiel `balanceOf(address account, uint256 id)`, welcher die Anzahl an Token im Besitz der Adresse zurückgibt.
 
 Weiter wurde auch das IPFS (InterPlanatary Filesystem) verwendet. Dies ist ein dezentraler Ort um Dateien, wie zum Beispiel Bilder oder Dateien wie JSONs, abzulegen. Wir haben hierfür Pinata verwendet, einen IPFS Storage Anbieter. In Pinata haben wir die Bilder für die Tier NFTS plus JSONs mit ein paar Informationen zu den Tieren abgelegt. Wenn eine Person ein Tier adoptiert, dann landet ein NFT davon in ihrer Wallet und das Bild, plus die Informationen im JSON, werden von Pinata geholt, und in der Kryptowallet des/der PatIn  angezeigt.
-![Appbild](Pasted image 20250630193035.png)
+
+![Appbild](./tierpatenschaften_06.png)
+
 ### Backend
 
 Damit wir den Smart Contract dann auch in Verbindung mit dem Frontend verwenden können, mussten wir ihn irgendwo hin deployen. Nachdem wir es in dem lokalen EVM getestet haben, gab es zwei Möglichkeiten: über eine Kryptowallet, zum Beispiel MetaMask, kann man einen Smart Contract in ein Testnetz hochladen, um es dort testen zu können. In unserem Fall wäre diese Testnetz Sepolia gewesen.
@@ -43,20 +47,20 @@ Für die Verbindung habe ich Wagmi.js verwendet. Es ist eine React Hook Library,
 
 Die grundsätzlichen Funktionen unseres Frontends inkludieren eine Hauptseite aller Tiere plus Detailseiten für jede Tierart. Auf der Hauptseite kann man sehr gut alle Tiere aufgelistet sehen. Im Header ist zum einen das Logo des Zoos "Happy Paws Zoo" zu finden, wie auch eine Loginbutton, über den man eine Kryptowallet verbinden kann.
 
-![Appbild](Pasted image 20250630191812.png)
+![Appbild](./tierpatenschaften_01.png)
 
 Sobald man auf ein Tier klickt kommt man auf eine Detailseite mit verschiedenen Information zu diesem Tier, so wie man es auch in einem echten Tiergarten vorfinden würde. Weiter unten in der Beschreibung gibt es dann die Möglichkeit, Pate der verschiedenen Tiere zu werden.
 
-![Appbild](Pasted image 20250630192158.png)
+![Appbild](./tierpatenschaften_02.png)
 
 Es werden konkrete Tiere in einer von mir erstellten Cardview angezeigt, zusammen mit den Informationen, wie viele Patenschaften noch offen sind, und ob man das Tier schon adoptiert hat, oder es noch frei ist und adoptiert werden kann.
 
-![Appbild](Pasted image 20250630192209.png)
+![Appbild](./tierpatenschaften_03.png)
 
 Wenn man ein Tier adoptieren will, muss man zuerst eine Kryptowallet verbinden, danach kann man über den Adoptieren-Button eine Transaktion über die Kryptowallet bestätigen. Nach einer kurzen Wartezeit sieht man dann, dass das Tier adoptiert wurde und wenn man in die Wallet hineinschaut, dann sieht man ein NFT des adoptieren Tieres zusammen mit einer kleinen Beschreibung und einem Bild.
 
-![Appbild](Pasted image 20250630192224.png)
-![Appbild](Pasted image 20250630192240.png)
+![Appbild](./tierpatenschaften_04.png)
+![Appbild](./tierpatenschaften_05.png)
 ## Persönliche Erfahrungen und Fazit
 
 Der Workshop war ein sehr interessantes Erlebnis für mich. Vor dem Workshop hatte ich nicht wirklich eine Ahnung von der Blockchain, außer den Informationen, welchen man hie und da im Internet liest. Also war der Workshop eine großartige Möglichkeit, zumindest einmal mehr über diese Technologie zu erfahren. Ich habe ein besseres Verständnis gewonnen plus auch die Erfahrung, dass ich mich zurzeit nicht viel mehr mit dieser Technologie befassen will. Meiner Meinung nach gibt es zurzeit noch mehr Probleme, wie folgendes, dass es einen hohen Stromkonsum mit sich bringt, und der Gewinn einer permanenten, chronologisch geordneten und immer erreichbaren Datenbank diesen zurzeit noch nicht übersteigt.
