@@ -127,12 +127,51 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+
+
+.tag-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.tag {
+	margin: 0.25em;
+	border: dotted 1px #a1a1a1;
+	border-radius: .5em;
+	padding: .5em 1em;
+	font-size: 1.15em;
+	background-color: #F8FCFD;
+
+}
+
+
+
+  .menu {
+	background-color: #0d0950;
+	border: none;
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 5px 10px;
+    display: none;
+  }
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
 	main {
 		padding: 1em;
+	}
+
+	.menu {
+	background-color: #0d0950;
+	border: none;
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 5px 10px;
+	display: block;
 	}
 }
 

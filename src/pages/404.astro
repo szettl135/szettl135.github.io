@@ -1,9 +1,9 @@
 ---
-permalink: /404.html
-layout: page
----
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-<style type="text/css" media="screen">
+---
+<BaseLayout>
+  <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
     max-width: 600px;
@@ -23,3 +23,6 @@ layout: page
   <p><strong>Page not found :(</strong></p>
   <p>The requested page could not be found.</p>
 </div>
+
+</BaseLayout>
+
