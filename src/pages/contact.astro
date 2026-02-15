@@ -1,42 +1,137 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+import image from '../assets/blank-profile.png';
+import Image from 'astro/components/Image.astro';
 ---
 
 <BaseLayout>
+  <main class="page">
+    <section class="container">
+      <h1 class="title">Contact me</h1>
 
-	<h1>🧑‍🚀 Hello, Astronaut!</h1>
-	<p>
-		Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-		serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-		website, blog, or portfolio with Astro.
-	</p>
-	<p>
-		This template comes with a few integrations already configured in your
-		<code>astro.config.mjs</code> file. You can customize your setup with
-		<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-		React, or Vue to your project.
-	</p>
-	<p>Here are a few ideas on how to get started with the template:</p>
-	<ul>
-		<li>Edit this page in <code>src/pages/index.astro</code></li>
-		<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-		<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-		<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-		<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-	</ul>
-	<p>
-		Have fun! If you get stuck, remember to
-		<a href="https://docs.astro.build/">read the docs</a>
-		or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-	</p>
-	<p>
-		Looking for a blog template with a bit more personality? Check out
-		<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-		by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-	</p>
+      <Image
+        src={image}
+        alt="Profile picture"
+        width={160}
+        height={160}
+        class="profile-image"
+      />
 
-	<style>
-		
-	</style>
-	
+      <p class="subtitle">
+        Want to get in touch? Find me here:
+      </p>
+
+      <nav class="contact-links" aria-label="Contact links">
+        <a class="contact-item" href="mailto:you@example.com">
+          <img class="icon" src="/icons/mail.svg" alt="" aria-hidden="true" />
+          <span class="label">Email</span>
+          <span class="value">you@example.com</span>
+        </a>
+
+        <a class="contact-item" href="https://github.com/yourname" target="_blank" rel="noreferrer">
+          <img class="icon" src="/icons/github.svg" alt="" aria-hidden="true" />
+          <span class="label">GitHub</span>
+          <span class="value">@yourname</span>
+        </a>
+
+        <a class="contact-item" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">
+          <img class="icon" src="/icons/linkedin.svg" alt="" aria-hidden="true" />
+          <span class="label">LinkedIn</span>
+          <span class="value">/in/yourname</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <style>
+    .page {
+      min-height: calc(100vh - 0px);
+      display: grid;
+      place-items: center;
+      padding: 48px 16px;
+    }
+
+    .container {
+      width: min(720px, 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      margin: 0;
+      opacity: 0.8;
+      max-width: 52ch;
+    }
+
+    .profile-image {
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      object-fit: cover;
+      margin: 10px 0 6px;
+      border: 3px solid rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-links {
+      margin-top: 14px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      column-gap: 12px;
+      row-gap: 2px;
+      align-items: center;
+
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.12);
+      background: rgba(255,255,255,0.7);
+
+      text-decoration: none;
+      color: inherit;
+
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0,0,0,0.22);
+      background: rgba(255,255,255,0.95);
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      justify-self: center;
+    }
+
+    .label {
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .value {
+      grid-column: 2 / -1;
+      opacity: 0.75;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+  </style>
 </BaseLayout>

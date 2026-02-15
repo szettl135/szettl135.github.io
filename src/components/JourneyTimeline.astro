@@ -1,0 +1,168 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Kind = "job" | "school" | "project" | "other";
+
+const { items, sort = "desc" } = Astro.props as {
+  items: CollectionEntry<"journey">[];
+  sort?: "asc" | "desc";
+};
+
+const kindMeta: Record<Kind, { label: string; color: string }> = {
+  job: { label: "Job", color: "#2563eb" },       // blue-600
+  school: { label: "School", color: "#16a34a" }, // green-600
+  project: { label: "Project", color: "#7c3aed" },// violet-600
+  other: { label: "Other", color: "#d97706" },   // amber-600
+};
+
+function dateValue(d?: Date) {
+  return d ? d.getTime() : NaN;
+}
+
+const sorted = [...items].sort((a, b) => {
+  const aTime = dateValue(a.data.startDate);
+  const bTime = dateValue(b.data.startDate);
+
+  if (!Number.isNaN(aTime) && !Number.isNaN(bTime)) {
+    return sort === "asc" ? aTime - bTime : bTime - aTime;
+  }
+
+  const ao = a.data.order ?? 9999;
+  const bo = b.data.order ?? 9999;
+  if (ao !== bo) return ao - bo;
+
+  return a.data.title.localeCompare(b.data.title);
+});
+
+const rendered = await Promise.all(
+  sorted.map(async (entry) => ({ entry, content: await entry.render() }))
+);
+---
+
+<div class="timeline" aria-label="Career journey">
+  {rendered.map(({ entry, content }) => {
+    const meta = kindMeta[entry.data.kind];
+    return (
+      <li class="item" style={`--dot:${meta.color};`}>
+        <span class="marker" aria-hidden="true"></span>
+
+        <div class="card">
+          <header class="header">
+            <div class="top">
+              <h3 class="title">{entry.data.title}</h3>
+              {entry.data.period && <span class="period">{entry.data.period}</span>}
+            </div>
+
+            <div class="sub">
+              <span class="badge" style={`--badge:${meta.color};`}>{meta.label}</span>
+              {entry.data.location && <span class="location">{entry.data.location}</span>}
+            </div>
+          </header>
+
+          <div class="body">
+            <content.Content />
+          </div>
+        </div>
+      </li>
+    );
+  })}
+</div>
+
+<style>
+  .timeline {
+    --rail-x: 12px;
+    --rail-color: #d1d5db;
+    --text-muted: #6b7280;
+
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+
+    position: relative;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: var(--rail-x);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--rail-color);
+  }
+
+  .item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    column-gap: 16px;
+    padding: 0 0 18px 0;
+  }
+
+  .marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--dot);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--rail-color);
+    margin-top: 6px;
+
+    justify-self: center;
+    align-self: start;
+    z-index: 1;
+  }
+
+  .card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: #ffffff;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .period {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .sub {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--badge) 40%, #0000);
+    background: color-mix(in srgb, var(--badge) 12%, #0000);
+  }
+
+  .location {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .body :global(p) {
+    margin: 10px 0 0;
+    color: #111827;
+    line-height: 1.6;
+  }
+</style>

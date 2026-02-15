@@ -1,0 +1,52 @@
+---
+import ToolCard from "./ToolCard.astro";
+
+type Category = "Frontend" | "Backend" | "Others";
+
+const {
+  tools,
+  category,
+  title = category,
+  showEmpty = false,
+} = Astro.props as {
+  tools: Array<{
+    name: string;
+    category: Category;
+    icon: string;
+    url?: string;
+    order?: number;
+  }>;
+  category: Category;
+  title?: string;
+  showEmpty?: boolean;
+};
+
+const items = tools
+  .filter((t) => t.category === category)
+  .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999) || a.name.localeCompare(b.name));
+---
+
+{(showEmpty || items.length > 0) && (
+  <section class="section">
+    {items.length > 0 ? (
+      <div class="grid">
+        {items.map((t) => (
+          <ToolCard name={t.name} icon={t.icon} url={t.url} />
+        ))}
+      </div>
+    ) : (
+      <p class="empty">No tools added.</p>
+    )}
+  </section>
+)}
+
+<style>
+  .section { margin: 28px 0; }
+  .title { font-size: 1.2rem; margin: 0 0 12px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 12px;
+  }
+  .empty { opacity: 0.7; margin: 0; }
+</style>

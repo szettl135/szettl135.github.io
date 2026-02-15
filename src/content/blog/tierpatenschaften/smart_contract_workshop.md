@@ -5,6 +5,7 @@ tags: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
 description: "Digitale Tierpatenschaften mit NFTs"
 pubDate: '2023-10-17'
 heroImage: './tierpatenschaften_01.png'
+featured: true
 ---
 
 ## Einleitung

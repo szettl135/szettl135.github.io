@@ -5,6 +5,7 @@ tags: ["Vue.js", "Vuex"]
 description: "Implementierung einer Undo Funktion für den easyBiograph"
 pubDate: '2023-10-17'
 heroImage: './easybiograph_01.png'
+featured: true
 ---
 
 ## Einleitung
