@@ -23,20 +23,30 @@ import Navigation from './Navigation.astro';
     </nav>
 </header>
 
-<style is:global>
+<style>
 	header {
 		margin: 0;
 		padding: 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
+
+	
 	h2 {
 		margin: 0;
 		font-size: 1em;
 	}
 
+	h2 a:hover {
+		color: var(--accent);
+	}
+
 	h2 a,
 	h2 a.active {
+		padding: 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
 		text-decoration: none;
 	}
 
@@ -106,12 +116,6 @@ import Navigation from './Navigation.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-	nav a {
-		padding: 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
 	}
 	nav a.active {
 		text-decoration: none;
