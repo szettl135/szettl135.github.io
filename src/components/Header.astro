@@ -7,10 +7,6 @@ import Navigation from './Navigation.astro';
 
 <header>
 
-	<div class="off-screen-menu">
-		<Navigation />
-    </div>
-
     <nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>	
 		<div class="ham-menu">
@@ -21,18 +17,12 @@ import Navigation from './Navigation.astro';
 		<div id="main-menu" class="internal-links"> 
 			<Navigation />
 		</div>
-    </nav>
-
-
-
-	<!-- <nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div id="main-menu" class="internal-links"> 
+		<div class="off-screen-menu" inert>
 			<Navigation />
 		</div>
-		<MenuButton>
-	</nav> -->
+    </nav>
 </header>
+
 <style is:global>
 	header {
 		margin: 0;
@@ -77,6 +67,7 @@ import Navigation from './Navigation.astro';
 		margin-left: auto;
 		position: relative;
 		display: none;
+		z-index: 1;
 	}
 
 	.ham-menu span {

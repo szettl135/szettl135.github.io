@@ -12,7 +12,7 @@ const items = await getCollection("journey");
 
 <BaseLayout>
 
-	<h1>ABout me</h1>
+	<h1>About me</h1>
 
 	<div class="text-container">
 		<p>
@@ -27,20 +27,15 @@ const items = await getCollection("journey");
 
 	</div>
 
-	<div>
-		<ul>
-			<div class="Milstone">
-				<JourneyTimeline items={items} sort="desc" />
-
-			</div>
-
-		</ul>
+	<div class="journey">
+		<h1>My Journey</h1>
+		<JourneyTimeline items={items} sort="desc" />
 	</div>
 	
 	<div>
-		Aquired skills
+		<h1>Acquired skills</h1>
 
-		<h4>Froent</h4>
+		<h4>Frontend</h4>
 		<div class="tool-conatiner">
 			<ToolGrid tools={tools} category="Frontend" />
 

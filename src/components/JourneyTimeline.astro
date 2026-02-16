@@ -47,7 +47,7 @@ const rendered = await Promise.all(
         <span class="marker" aria-hidden="true"></span>
 
         <div class="card">
-          <header class="header">
+          <header class="journey-header">
             <div class="top">
               <h3 class="title">{entry.data.title}</h3>
               {entry.data.period && <span class="period">{entry.data.period}</span>}
@@ -97,6 +97,14 @@ const rendered = await Promise.all(
     grid-template-columns: 28px 1fr;
     column-gap: 16px;
     padding: 0 0 18px 0;
+  }
+
+  .journey-header {
+    border-radius: 12px;
+    margin: 0;
+    padding: 0.5em 1em;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
   }
 
   .marker {

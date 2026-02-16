@@ -1,7 +1,7 @@
 ---
 title: Personal Project · Dev Toolkit
 kind: project
-period: 2023
+period: 2/m3
 startDate: 2023-03-01
 endDate: 2023-12-01
 ---

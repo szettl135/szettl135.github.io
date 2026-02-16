@@ -11,8 +11,6 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const tags = [...new Set(posts.flatMap((post) => post.data.tags ?? []))].sort();
-
-console.log(posts[0].data.heroImage)
 ---
 
 <BaseLayout>
@@ -73,9 +71,6 @@ console.log(posts[0].data.heroImage)
       });
     }
 
-    // Filtering rule:
-    // - If no tags selected => show all
-    // - If tags selected => post must contain ALL selected tags
     function filterPosts() {
       items.forEach(li => {
         const postTags = (li.dataset.tags || '').split(',').filter(Boolean);
@@ -106,7 +101,6 @@ console.log(posts[0].data.heroImage)
       filterPosts();
     });
 
-    // init
     syncButtons();
     filterPosts();
   </script>
