@@ -31,7 +31,7 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags ?? []))].sort();
     <ul id="post-list">
       {posts.map((post) => (
         <li data-tags={(post.data.tags ?? []).join(',')}>
-          <a href={`/blog/${post.id}/`}>
+          <a href={`/projects/${post.id}/`}>
             {post.data.heroImage && (
               <Image width={720} height={360} src={post.data.heroImage} alt="" />
             )}

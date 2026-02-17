@@ -1,4 +1,3 @@
-/* Default (light) theme */
 :root {
   color-scheme: light;
 
@@ -11,7 +10,6 @@
   --border: #e5e7eb;
 }
 
-/* Dark theme overrides */
 :root[data-theme="dark"] {
   color-scheme: dark;
 
@@ -24,7 +22,6 @@
   --border: #24324a;
 }
 
-/* Optional: if user has dark preference and you haven't set a theme explicitly */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;

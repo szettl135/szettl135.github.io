@@ -6,7 +6,6 @@ import Navigation from './Navigation.astro';
 ---
 
 <header>
-
     <nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>	
 		<div class="ham-menu">
@@ -29,6 +28,9 @@ import Navigation from './Navigation.astro';
 		padding: 0 1em;
 		background: var(--surface);
 		box-shadow: 0 2px 8px rgba(var(--primary), 5%);
+		position: sticky;
+		top: 0;
+		z-index: 1;
 	}
 
 	
@@ -65,7 +67,7 @@ import Navigation from './Navigation.astro';
 		text-align: center;
 		font-size: 2.5rem;
 		transition: .3s ease;
-		z-index: 1;
+		z-index: 2;
 	}
 	.off-screen-menu.active {
 		right: 0;
@@ -78,7 +80,7 @@ import Navigation from './Navigation.astro';
 		margin-left: auto;
 		position: relative;
 		display: none;
-		z-index: 2;
+		z-index: 3;
 	}
 
 	.ham-menu span {

@@ -62,6 +62,7 @@ Wenn man ein Tier adoptieren will, muss man zuerst eine Kryptowallet verbinden, 
 
 ![Appbild](./tierpatenschaften_04.png)
 ![Appbild](./tierpatenschaften_05.png)
+
 ## Persönliche Erfahrungen und Fazit
 
 Der Workshop war ein sehr interessantes Erlebnis für mich. Vor dem Workshop hatte ich nicht wirklich eine Ahnung von der Blockchain, außer den Informationen, welchen man hie und da im Internet liest. Also war der Workshop eine großartige Möglichkeit, zumindest einmal mehr über diese Technologie zu erfahren. Ich habe ein besseres Verständnis gewonnen plus auch die Erfahrung, dass ich mich zurzeit nicht viel mehr mit dieser Technologie befassen will. Meiner Meinung nach gibt es zurzeit noch mehr Probleme, wie folgendes, dass es einen hohen Stromkonsum mit sich bringt, und der Gewinn einer permanenten, chronologisch geordneten und immer erreichbaren Datenbank diesen zurzeit noch nicht übersteigt.

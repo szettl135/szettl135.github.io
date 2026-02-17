@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
+	loader: glob({ base: './src/content/projects', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
 	schema: ({ image }) =>
 		z.object({
@@ -36,11 +36,11 @@ const journey = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		kind: z.enum(["job", "school", "project", "other"]),
-		period: z.string().optional(), // e.g. "2023 – Present"
+		period: z.string().optional(),
 		startDate: z.coerce.date().optional(),
 		endDate: z.coerce.date().optional(),
 		location: z.string().optional(),
-		order: z.number().optional(), // optional manual override
+		order: z.number().optional(),
 	}),
 });
 
