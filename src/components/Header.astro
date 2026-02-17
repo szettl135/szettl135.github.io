@@ -27,8 +27,8 @@ import Navigation from './Navigation.astro';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: var(--surface);
+		box-shadow: 0 2px 8px rgba(var(--primary), 5%);
 	}
 
 	
@@ -38,20 +38,20 @@ import Navigation from './Navigation.astro';
 	}
 
 	h2 a:hover {
-		color: var(--accent);
+		color: var(--primary);
 	}
 
 	h2 a,
 	h2 a.active {
 		padding: 0.5em;
-		color: var(--black);
+		color: var(--text);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 		text-decoration: none;
 	}
 
 	.off-screen-menu {
-		background-color:  rgb(252, 252, 252);
+		background-color: var(--surface);
 		height: 100vh;
 		width: 100%;
 		max-width: 400px;
@@ -65,6 +65,7 @@ import Navigation from './Navigation.astro';
 		text-align: center;
 		font-size: 2.5rem;
 		transition: .3s ease;
+		z-index: 1;
 	}
 	.off-screen-menu.active {
 		right: 0;
@@ -77,7 +78,7 @@ import Navigation from './Navigation.astro';
 		margin-left: auto;
 		position: relative;
 		display: none;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.ham-menu span {
@@ -119,7 +120,7 @@ import Navigation from './Navigation.astro';
 	}
 	nav a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		border-bottom-color: var(--primary);
 	}
 	
 	@media (max-width: 720px) {

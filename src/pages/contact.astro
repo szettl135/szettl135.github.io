@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import image from '../assets/blank-profile.png';
 import Image from 'astro/components/Image.astro';
+import profileImg from '../assets/blank-profile.png';
+import emailIcon from '../assets/email.svg';
+import githubIcon from '../assets/github.svg';
+import linkedinIcon from '../assets/linkedin.svg';
 ---
 
 <BaseLayout>
@@ -11,7 +14,7 @@ import Image from 'astro/components/Image.astro';
       <h1 class="title">Contact me</h1>
 
       <Image
-        src={image}
+        src={profileImg}
         alt="Profile picture"
         width={160}
         height={160}
@@ -24,21 +27,21 @@ import Image from 'astro/components/Image.astro';
 
       <nav class="contact-links" aria-label="Contact links">
         <a class="contact-item" href="mailto:you@example.com">
-          <img class="icon" src="/icons/mail.svg" alt="" aria-hidden="true" />
+          <Image width={44} height={44} class="icon" src={emailIcon} alt="" aria-hidden="true" />
           <span class="label">Email</span>
           <span class="value">you@example.com</span>
         </a>
 
-        <a class="contact-item" href="https://github.com/yourname" target="_blank" rel="noreferrer">
-          <img class="icon" src="/icons/github.svg" alt="" aria-hidden="true" />
+        <a class="contact-item" href="https://github.com/szettl135" target="_blank" rel="noreferrer">
+          <Image width={44} height={44} class="icon" src={githubIcon} alt="" aria-hidden="true" />
           <span class="label">GitHub</span>
-          <span class="value">@yourname</span>
+          <span class="value">@szettl135</span>
         </a>
 
-        <a class="contact-item" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">
-          <img class="icon" src="/icons/linkedin.svg" alt="" aria-hidden="true" />
+        <a class="contact-item" href="https://www.linkedin.com/in/sebastian-zettl-87b006289" target="_blank" rel="noreferrer">
+          <Image width={44} height={44} class="icon" src={linkedinIcon} alt="" aria-hidden="true" />
           <span class="label">LinkedIn</span>
-          <span class="value">/in/yourname</span>
+          <span class="value">Sebastian Zettl</span>
         </a>
       </nav>
     </section>
@@ -100,8 +103,8 @@ import Image from 'astro/components/Image.astro';
 
       padding: 12px 14px;
       border-radius: 12px;
-      border: 1px solid rgba(0,0,0,0.12);
-      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border);
+      background: var(--surface);
 
       text-decoration: none;
       color: inherit;
@@ -111,8 +114,8 @@ import Image from 'astro/components/Image.astro';
 
     .contact-item:hover {
       transform: translateY(-2px);
-      border-color: rgba(0,0,0,0.22);
-      background: rgba(255,255,255,0.95);
+      border-color: var(--border);
+      background: var(--bg);
     }
 
     .icon {

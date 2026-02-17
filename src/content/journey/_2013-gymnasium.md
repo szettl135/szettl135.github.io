@@ -1,6 +1,6 @@
 ---
 title: Frontend Developer · Acme Inc.
-kind: job
+kind: project
 period: 2024 – Present
 startDate: 2024-01-01
 location: Berlin, DE

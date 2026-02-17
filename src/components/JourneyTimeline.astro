@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 type Kind = "job" | "school" | "project" | "other";
 
@@ -35,7 +36,7 @@ const sorted = [...items].sort((a, b) => {
 });
 
 const rendered = await Promise.all(
-  sorted.map(async (entry) => ({ entry, content: await entry.render() }))
+  sorted.map(async (entry) => ({ entry, content: await render(entry) }))
 );
 ---
 
@@ -71,8 +72,6 @@ const rendered = await Promise.all(
 <style>
   .timeline {
     --rail-x: 12px;
-    --rail-color: #d1d5db;
-    --text-muted: #6b7280;
 
     list-style: none;
     padding: 0;
@@ -88,7 +87,7 @@ const rendered = await Promise.all(
     top: 0;
     bottom: 0;
     width: 2px;
-    background: var(--rail-color);
+    background: var(--primary);
   }
 
   .item {
@@ -103,7 +102,7 @@ const rendered = await Promise.all(
     border-radius: 12px;
     margin: 0;
     padding: 0.5em 1em;
-    background: white;
+    background: var(--surface);
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
   }
 
@@ -113,7 +112,7 @@ const rendered = await Promise.all(
     border-radius: 999px;
     background: var(--dot);
     border: 2px solid white;
-    box-shadow: 0 0 0 2px var(--rail-color);
+    box-shadow: 0 0 0 2px var(--primary);
     margin-top: 6px;
 
     justify-self: center;
@@ -122,10 +121,10 @@ const rendered = await Promise.all(
   }
 
   .card {
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 14px 16px;
-    background: #ffffff;
+    background: var(--bg);
   }
 
   .top {
@@ -168,9 +167,4 @@ const rendered = await Promise.all(
     font-size: 0.9rem;
   }
 
-  .body :global(p) {
-    margin: 10px 0 0;
-    color: #111827;
-    line-height: 1.6;
-  }
 </style>

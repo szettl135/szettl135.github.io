@@ -32,16 +32,16 @@ const tools = defineCollection({
 });
 
 const journey = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    kind: z.enum(["job", "school", "project", "other"]),
-    period: z.string().optional(), // e.g. "2023 – Present"
-    startDate: z.coerce.date().optional(),
-    endDate: z.coerce.date().optional(),
-    location: z.string().optional(),
-    order: z.number().optional(), // optional manual override
-  }),
+	loader: glob({ base: './src/content/journey', pattern: '**/[!_]*.{md,mdx}' }),
+	schema: z.object({
+		title: z.string(),
+		kind: z.enum(["job", "school", "project", "other"]),
+		period: z.string().optional(), // e.g. "2023 – Present"
+		startDate: z.coerce.date().optional(),
+		endDate: z.coerce.date().optional(),
+		location: z.string().optional(),
+		order: z.number().optional(), // optional manual override
+	}),
 });
 
 export const collections = { blog, tools, journey };
