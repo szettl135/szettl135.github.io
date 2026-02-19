@@ -1,116 +1,18 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import '../../styles/project-list.css';
+import FilterableProjectList from '../../components/FilterableProjectList.astro';
 
-const posts = (await getCollection('blog')).sort(
+const projects = (await getCollection('project')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const tags = [...new Set(posts.flatMap((post) => post.data.tags ?? []))].sort();
+const tags = [...new Set(projects.flatMap((post) => post.data.tags ?? []))].sort();
 ---
 
 <BaseLayout>
-  <section>
     <h1>Projekte</h1>
-    <p>Hier sind alle meine derzeitigen Projekte zu finden.</p>
-
-    <div class="tag-row">
-      <button type="button" class="tag tag--clear" data-clear>Alle</button>
-
-      {tags.map((tag) => (
-        <button type="button" class="tag" data-tag={tag}>
-          {tag}
-        </button>
-      ))}
-    </div>
-
-    <ul id="post-list">
-      {posts.map((post) => (
-        <li data-tags={(post.data.tags ?? []).join(',')}>
-          <a href={`/projects/${post.id}/`}>
-            {post.data.heroImage && (
-              <Image width={720} height={360} src={post.data.heroImage} alt="" />
-            )}
-            <h4 class="title">{post.data.title}</h4>
-            <p class="date">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  <script is:inline>
-    const tagButtons = Array.from(document.querySelectorAll('button[data-tag]'));
-    const clearBtn = document.querySelector('button[data-clear]');
-    const items = Array.from(document.querySelectorAll('#post-list > li[data-tags]'));
-
-    const params = new URLSearchParams(location.search);
-    const initial = (params.get('tags') || '').split(',').map(s => s.trim()).filter(Boolean);
-    const active = new Set(initial);
-
-    function setUrlFromActive() {
-      const p = new URLSearchParams(location.search);
-      if (active.size) p.set('tags', Array.from(active).join(','));
-      else p.delete('tags');
-
-      const qs = p.toString();
-      history.replaceState(null, '', qs ? `${location.pathname}?${qs}` : location.pathname);
-    }
-
-    function syncButtons() {
-      tagButtons.forEach(btn => {
-        const t = btn.dataset.tag;
-        btn.classList.toggle('is-active', active.has(t));
-        btn.setAttribute('aria-pressed', active.has(t) ? 'true' : 'false');
-      });
-    }
-
-    function filterPosts() {
-      items.forEach(li => {
-        const postTags = (li.dataset.tags || '').split(',').filter(Boolean);
-        const ok = active.size === 0
-          ? true
-          : Array.from(active).every(t => postTags.includes(t));
-
-        li.hidden = !ok;
-      });
-    }
-
-    tagButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const t = btn.dataset.tag;
-        if (active.has(t)) active.delete(t);
-        else active.add(t);
-
-        setUrlFromActive();
-        syncButtons();
-        filterPosts();
-      });
-    });
-
-    clearBtn?.addEventListener('click', () => {
-      active.clear();
-      setUrlFromActive();
-      syncButtons();
-      filterPosts();
-    });
-
-    syncButtons();
-    filterPosts();
-  </script>
-
-  <style>
-    .tag:hover {
-      border-color: var(--primary);
-    }
-    .tag.is-active {
-      background: var(--surface);
-    }
-  </style>
+    <FilterableProjectList id="all-projects" projects={projects} />
 </BaseLayout>

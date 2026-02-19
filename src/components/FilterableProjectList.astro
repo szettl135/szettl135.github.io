@@ -1,0 +1,82 @@
+---
+import type { CollectionEntry } from "astro:content";
+import ProjectList from "./ProjectList.astro";
+
+export interface Props {
+  projects: CollectionEntry<"project">[];
+  id: string;
+}
+
+const { projects, id } = Astro.props;
+
+const tags = [...new Set(projects.flatMap((p) => p.data.tags ?? []))].sort();
+---
+
+<section id={id}>
+  <div class="tag-row">
+    <button type="button" class="tag tag--clear" data-clear>All</button>
+
+    {tags.map((tag) => (
+      <button type="button" class="tag" data-tag={tag} aria-pressed="false">
+        {tag}
+      </button>
+    ))}
+  </div>
+
+  <ProjectList projects={projects} withTagData />
+</section>
+
+<script define:vars={{ id }}>
+  const root = document.getElementById(id);
+  const tagButtons = Array.from(root.querySelectorAll('button[data-tag]'));
+  const clearBtn = root.querySelector('button[data-clear]');
+  const items = Array.from(root.querySelectorAll('li[data-tags]'));
+  const active = new Set();
+
+  function syncButtons() {
+    tagButtons.forEach(btn => {
+      const t = btn.dataset.tag;
+      const on = active.has(t);
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  function filterPosts() {
+    items.forEach(li => {
+      const postTags = JSON.parse(li.dataset.tags || '[]');
+      const ok = active.size === 0
+        ? true
+        : Array.from(active).every(t => postTags.includes(t));
+      li.hidden = !ok;
+    });
+  }
+
+  tagButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const t = btn.dataset.tag;
+      if (active.has(t)) active.delete(t);
+      else active.add(t);
+      syncButtons();
+      filterPosts();
+    });
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    active.clear();
+    syncButtons();
+    filterPosts();
+  });
+
+  syncButtons();
+  filterPosts();
+</script>
+
+<style>
+    .tag:hover {
+        border-color: var(--primary);
+    }
+    .tag.is-active {
+        background: var(--surface);
+    }
+</style>

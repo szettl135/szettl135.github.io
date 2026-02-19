@@ -4,12 +4,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
 
-import image from '../assets/blank-profile.png';
+import image from '../assets/photo.jpg';
 
 import '../styles/project-list.css'
+import ProjectList from '../components/ProjectList.astro';
 
 
-const posts = (await getCollection('blog')).filter(
+const projects = (await getCollection('project')).filter(
 	(a) => a.data.featured == true
 ).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -32,25 +33,7 @@ const posts = (await getCollection('blog')).filter(
 	</div>
 
 	<h2 class="project">Ausgewählte Projekte</h2>
-	<div>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<a href={`/projects/${post.id}/`}>
-							{post.data.heroImage && (
-								<Image width={720} height={360} src={post.data.heroImage} alt="" />
-							)}
-							<h4 class="title">{post.data.title}</h4>
-							<p class="date">
-								<FormattedDate date={post.data.pubDate} />
-							</p>
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</div>
+	<ProjectList projects={projects} />
 
 	<style>
 		.introduction-container {
