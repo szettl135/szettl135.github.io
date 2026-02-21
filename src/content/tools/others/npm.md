@@ -1,7 +1,7 @@
 ---
-name: Linux
+name: npm
 category: Others
-icon: '../icons/linux.svg'
-url: https://www.linux.org/
-order: 60
+icon: '../icons/npm.svg'
+url: https://www.npmjs.com/
+order: 50
 ---

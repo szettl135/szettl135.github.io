@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-import '../../styles/project-list.css';
 import FilterableProjectList from '../../components/FilterableProjectList.astro';
 
 const projects = (await getCollection('project')).sort(

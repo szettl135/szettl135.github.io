@@ -3,9 +3,9 @@ title: "Implementierung einer Undo Funktion für den easyBiograph"
 link: https://github.com/fhstp/easybiograph
 tags: ["Vue.js", "Vuex"]
 description: "Implementierung einer Undo Funktion für den easyBiograph"
-pubDate: '2023-10-17'
+pubDate: '2025-07-17'
 heroImage: './easybiograph_01.png'
-featured: true
+featured: false
 ---
 
 ## Einleitung

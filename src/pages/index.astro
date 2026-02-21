@@ -1,12 +1,10 @@
 ---
 import Image from 'astro/components/Image.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
 
 import image from '../assets/photo.jpg';
 
-import '../styles/project-list.css'
 import ProjectList from '../components/ProjectList.astro';
 
 
@@ -38,7 +36,7 @@ const projects = (await getCollection('project')).filter(
 	<style>
 		.introduction-container {
 			display: flex;
-			border: 2px yellowgreen solid;
+			border: 2px var(--border) solid;
 			border-radius: 10px;
 			padding: 1em;
 			animation: glow 2s ease-in-out infinite;
@@ -66,15 +64,6 @@ const projects = (await getCollection('project')).filter(
 			border-radius: 50%;
 			border: 1px black solid;
 
-		}
-
-		@keyframes glow {
-		0%, 100% {
-			box-shadow: 0 0 5px rgba(52, 211, 153, 0.5), 0 0 10px rgba(52, 211, 153, 0.3);
-		}
-		50% {
-			box-shadow: 0 0 20px rgba(52, 211, 153, 0.8), 0 0 30px rgba(52, 211, 153, 0.5);
-		}
 		}
 
 	</style>

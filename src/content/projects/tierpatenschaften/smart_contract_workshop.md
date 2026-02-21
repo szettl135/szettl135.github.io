@@ -3,9 +3,9 @@ title: "Digitale Tierpatenschaften mit NFTs (ERC-1155 Smart Contracts)"
 link: https://github.com/realJanWeiss/zoo-sponsorship
 tags: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
 description: "Digitale Tierpatenschaften mit NFTs"
-pubDate: '2023-10-17'
+pubDate: '2025-06-30'
 heroImage: './tierpatenschaften_01.png'
-featured: true
+featured: false
 ---
 
 ## Einleitung

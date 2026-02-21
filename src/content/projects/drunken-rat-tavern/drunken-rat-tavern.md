@@ -1,10 +1,9 @@
 ---
 title: "Print2Mobile | The Drunken Rat Tavern"
-link: https://github.com/realJanWeiss/zoo-sponsorship
-tags: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
-description: "Digitale Tierpatenschaften mit NFTs"
-pubDate: '2023-10-17'
-heroImage: './test.png'
+tags: ["HTML", "CSS", "JS", "JQuery", "PHP", "MariaDB"]
+description: "Print2Mobile Project utilizing QR-codes which lead to a fantasy themed chat app"
+pubDate: '2024-10-16'
+heroImage: './drunken_rat_tavern_logo.png'
 featured: true
 ---
 
@@ -18,9 +17,14 @@ Die Projektidee kam aus der Kombination meiner technischen Kenntnisse, wie man e
 
 Weiterführend war mein Plan dann, für das physische Medium einen echten Bierkrug oder Untersetzer zu verwenden. Diesen könnte man zum Beispiel in einem echten Restaurant einsetzen. Gäste könnten damit zum Beispiel, während sie auf ihr Essen warten, mit anderen Gästen auf lustige Art und Weise kommunizieren.
 
+![Bierdeckel mit QR-Code](./qr_code.jpg)
+
 ## Umsetzung
 
 Zur Umsetzung habe ich einfaches HTML, CSS, JavaScript und PHP verwendet. Es kamen noch für das JavaScript JQuery und für das CSS Tailwind zur Verwendung. JQuery wurde für das automatische Nachladen der Nachrichten verwendet. Auch habe ich eine einfache MySQL Datenbank erstellt, welche alle gesendeten Nachrichten speichert. Ich habe mich vor allem auf das Backend und die Funktionen fokusiert und das Frontend eher simple gehalten. Gehostet wurde das Projekt über die Campus Cloud und deren PHP-Instanz.
+
+| !['Login Screen'](login_screen.jpg) | !['Chat Screen'](chat_screen.jpg) | !['Example Chat'](chat_example.jpg) |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
 Link zur Webseite (Nicht mehr funktional): https://it241501-20437.php.fhstp.cc/tavern/
 

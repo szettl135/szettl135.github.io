@@ -1,23 +1,48 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
-const { name, icon, url } = Astro.props as {
+export interface Props {
   name: string;
-  icon: string;
   url?: string;
-};
+  icon?: ImageMetadata;
+  iconAlt?: string;
+}
+
+const { name, url, icon, iconAlt = "" } = Astro.props;
+
+const hasIconSlot = Astro.slots.has("icon");
+const hasAnyIcon = hasIconSlot || !!icon;
 ---
 
 <article class="card">
   {url ? (
     <a class="link" href={url} target="_blank" rel="noreferrer">
-        <Image width={22} height={22} src={icon} class="icon" alt="" />
-        <span class="name">{name}</span>
+      {hasAnyIcon && (
+        <span class="icon" aria-hidden="true">
+          {hasIconSlot ? (
+            <slot name="icon" />
+          ) : (
+            <Image src={icon as ImageMetadata} width={44} height={44} class="icon-img" alt={iconAlt} />)
+            }
+        </span>
+      )}
+
+      <span class="name">{name}</span>
     </a>
   ) : (
     <div class="link">
-        <Image width={22} height={22} src={icon} class="icon" alt="" />
-        <span class="name">{name}</span>
+      {hasAnyIcon && (
+        <span class="icon" aria-hidden="true">
+          {hasIconSlot ? (
+            <slot name="icon" />
+          ) : (
+            <Image src={icon as ImageMetadata} width={44} height={44} class="icon-img" alt={iconAlt} />
+          )}
+        </span>
+      )}
+
+      <span class="name">{name}</span>
     </div>
   )}
 </article>
@@ -29,13 +54,50 @@ const { name, icon, url } = Astro.props as {
     padding: 12px 14px;
     background: var(--surface);
   }
+
+  /* Desktop */
   .link {
+    --icon-size: 22px;
     display: flex;
     align-items: center;
     gap: 10px;
     color: inherit;
     text-decoration: none;
   }
-  .icon { width: 22px; height: 22px; }
+
+  .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    display: grid;
+    place-items: center;
+
+    /* wenn dein SVG fill="currentColor" nutzt */
+    color: var(--text);
+    flex: 0 0 auto;
+  }
+  
+	.card:hover {
+      transform: translateY(-2px);
+	}
+
+  /* sorgt dafür, dass inline SVGs und imgs wirklich skalieren */
+  .icon :global(svg),
+  .icon :global(img) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   .name { font-weight: 600; }
+
+  /* Mobile: Icon größer + oben */
+  @media (max-width: 720px) {
+    .link {
+      --icon-size: 36px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+    }
+  }
 </style>

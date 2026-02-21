@@ -1,23 +1,16 @@
 ---
 import ToolCard from "./ToolCard.astro";
-
 type Category = "Frontend" | "Backend" | "Others";
 
-const {
-  tools,
-  category,
-  title = category,
-  showEmpty = false,
-} = Astro.props as {
+const { tools, category, showEmpty = false } = Astro.props as {
   tools: Array<{
     name: string;
     category: Category;
-    icon: string;
+    icon: any;
     url?: string;
     order?: number;
   }>;
   category: Category;
-  title?: string;
   showEmpty?: boolean;
 };
 

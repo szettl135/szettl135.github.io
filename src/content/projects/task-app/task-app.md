@@ -1,10 +1,9 @@
 ---
 title: "TaskApp"
-link: https://github.com/realJanWeiss/zoo-sponsorship
-tags: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
-description: "Digitale Tierpatenschaften mit NFTs"
-pubDate: '2023-10-17'
-heroImage: './test.png'
+tags: ["React Native", "CSS", "Expo"]
+description: "Simple Task app in order to learn react natice and Expo"
+pubDate: '2023-03-02'
+heroImage: './banner.png'
 featured: false
 ---
 
@@ -16,25 +15,18 @@ Nachdem der Sinn dieses Projektes mehr das Lernen von React Native war, sind die
 
 Die Liste gibt auch die Möglichkeit, den Task als erledigt zu markieren oder dies auch rückgängig zu machen und auch den Task zu löschen.
 
-![Appbild](./test.png)
-
-| ![App Screenshot](./test.png) | ![App Screenshot](./test.png) | ![App Screenshot](./test.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-
-![AppScreenshot]('./Pasted image 20250218141440.png')
-
-| ![App Screenshot](./Pasted image 20250218141440.png) | ![App Screenshot](./Pasted image 20250218141555.png) | ![App Screenshot](./Pasted image 20250218141629.png) |
+| ![Task App Main Screen](./main_screen.png) | ![Task App Main Screen after checking task](./main_screen_check.png) | ![Task App Main Screen after deleting task](./main_screen_delete.png) |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
 Im Hauptfenster gibt es auch einen Floating-Button, welcher das Hinzufügen von neuen Tasks erlaubt. Man kann den Titel eingeben, eine optionale Beschreibung, wie auch das Fälligkeitsdatum des Tasks. 
 
-| ![[Pasted image 20250218141718.png]] | ![[Pasted image 20250218141738.png]] |
+| ![Task App add task screen](./add_task.png) | ![Task App add task screen showing date selection](./add_task_select_date.png) |
 | ------------------------------------ | ------------------------------------ |
 
 
 Auch kann man auf einen Task in der Liste drücken, und man kommt auf eine Detailseite, wo man alle Informationen des Tasks, wie auch die Beschreibung einsehen kann. Wie auch in der Liste, kann man auch hier die Checkbox bestätigen und es gibt zwei Knöpfe, einen zum Löschen und einem zum Editieren des Tasks wo man alle Information Ändern kann.
 
-| ![[Pasted image 20250218141813.png]] | ![[Pasted image 20250218141833.png]] |
+| ![Task App task detail screen](./task_detail_screen.png) | ![Task App task edit screen](./task_edit_screen.png) |
 | ------------------------------------ | ------------------------------------ |
 
 ## Technologien
