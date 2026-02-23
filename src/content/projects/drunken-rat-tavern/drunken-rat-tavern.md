@@ -7,25 +7,21 @@ heroImage: './drunken_rat_tavern_logo.png'
 featured: true
 ---
 
-## Vorwort
+## Project idea
 
-The Drunken Rat Tavern ist ein Print2Mobile Projekt welches im Rahmen der Lehrveranstaltung "Masterklasse Mobile" im Masterstudiengang "Interactive Technologies" erstellt wurde. Ziel des Projektes war es, dass man von einem print oder physischen Medium auf ein digitales wechseln kann und bei diesem Übergang die wichtigen Regeln eines QR-Codes zu beachten, wie das Abholen der User oder die Unterstützung aller potenziellen Endgeräte. Ein weiterer wichtiger Punkt hierbei war, dass das Projekt Kenntnisse verwenden sollte, welche man sich schon angeeignet hat und welche nicht erst gelernt werden müssen.
+The project idea came from combining my technical knowledge of how to create a chat app with my love of fantasy. I already had a general understanding of how to build a chat app thanks to previous assignments, which made it a good fit for the scope of the project. At the same time, I wanted to create a project based on fantasy. This resulted in a combination of both—The Drunken Rate Tavern. It is a chat app where you can choose your name and a fantasy race before you start chatting. These races consist of various fantasy races, such as dwarves or orcs. The race then influences the messages that are sent by replacing some words, making the message sound like it was written by that race. For example, in the case of orcs, “Boys” becomes “Boyz” or ‘Humans’ becomes “'Umiez.”
 
-## Projektidee
+My plan was then to use a real beer mug or coaster as the physical medium. This could be used in a real restaurant, for example. Guests could use it to communicate with other guests in a fun way while waiting for their food.
 
-Die Projektidee kam aus der Kombination meiner technischen Kenntnisse, wie man eine Chat App erstellt und meine Liebe zu Fantasy. Ich hatte schon generelle Kenntnisse, wie eine Chat App aufgebaut werden kann dank früherer Aufgaben, wodurch sich dies für den Umfang des Projektes angeboten hat. Gleichzeitig wollte ich ein Projekt rund um Fantasy erstellen. Dadurch entstand eine Kombination aus beiden - The Drunken Rate Tavern. Es ist eine Chat App, in welcher man seinen Namen und eine Fantasyrasse auswählen kann, bevor man beginnt zu chatten. Diese Rassen bestehen aus verschiedenen Fantasyrassen, wie Zwerge oder Orks. Die Rasse beeinflusst dann die Nachrichten, welche geschickt werden, indem manche Wörter ersetzt werden, wodurch sich die Nachricht wie von der Rasse geschrieben anhört. Zum Beispiel im Falle der Orks wird "Boys" zu "Boyz" oder "Humans" zu " 'Umiez".
+![Beer mat with QR code](./qr_code.jpg)
 
-Weiterführend war mein Plan dann, für das physische Medium einen echten Bierkrug oder Untersetzer zu verwenden. Diesen könnte man zum Beispiel in einem echten Restaurant einsetzen. Gäste könnten damit zum Beispiel, während sie auf ihr Essen warten, mit anderen Gästen auf lustige Art und Weise kommunizieren.
+## Implementation
 
-![Bierdeckel mit QR-Code](./qr_code.jpg)
+I used simple HTML, CSS, JavaScript, and PHP for the implementation. I also used JQuery for the JavaScript and Tailwind for the CSS. JQuery was used for automatically reloading the messages. I also created a simple MySQL database that stores all sent messages. I focused primarily on the backend and the functions and kept the frontend rather simple. The project was hosted via the Campus Cloud and its PHP instance.
 
-## Umsetzung
+| ![‘Login Screen’](login_screen.jpg) | ![‘Chat Screen’](chat_screen.jpg) | ![‘Example Chat’](chat_example.jpg) |
+| ------------------------------------ | ----------------------------------- - | ------------------------------------ |
 
-Zur Umsetzung habe ich einfaches HTML, CSS, JavaScript und PHP verwendet. Es kamen noch für das JavaScript JQuery und für das CSS Tailwind zur Verwendung. JQuery wurde für das automatische Nachladen der Nachrichten verwendet. Auch habe ich eine einfache MySQL Datenbank erstellt, welche alle gesendeten Nachrichten speichert. Ich habe mich vor allem auf das Backend und die Funktionen fokusiert und das Frontend eher simple gehalten. Gehostet wurde das Projekt über die Campus Cloud und deren PHP-Instanz.
+Link to the website (no longer functional): https://it241501-20437.php.fhstp.cc/tavern/
 
-| !['Login Screen'](login_screen.jpg) | !['Chat Screen'](chat_screen.jpg) | !['Example Chat'](chat_example.jpg) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-
-Link zur Webseite (Nicht mehr funktional): https://it241501-20437.php.fhstp.cc/tavern/
-
-Alle Bilder stammen von mir
+All images are my own.

@@ -2,43 +2,44 @@
 title: "TaskApp"
 tags: ["React Native", "CSS", "Expo"]
 description: "Simple Task app in order to learn react natice and Expo"
-pubDate: '2023-03-02'
+pubDate: '2025-03-02'
 heroImage: './banner.png'
 featured: false
 ---
 
-Für extra Punkte habe ich auch neben meinem Hauptprojekt, ein digitales Haushaltsbuch, geschrieben in Ionic mit einem NestJs Backend. Hierbei war das Hauptziel, die Verwendung von React Native zu erlernen, da ich es zuvor nie verwendet habe. Zum Erlernen habe ich hierzu eine einfache Tasklisten App erstellte, in welcher man Tasks erstellen, editieren und löschen kann und alles im lokalen Storage gespeichert ist.
+For extra points, I also wrote a digital household budget book in Ionic with a NestJs backend alongside my main project. The main goal here was to learn how to use React Native, as I had never used it before. To learn how to use it, I created a simple task list app where you can create, edit, and delete tasks, and everything is stored in local storage.
 
 ## Features
 
-Nachdem der Sinn dieses Projektes mehr das Lernen von React Native war, sind die Funktionen der App sehr einfach gehalten. Es gibt ein Hauptfenster, in welche man alle Tasks welche angelegt sind, sehen kann. Sie sind nach Datum geordnete und gebe die wichtigen Informationen über den Task wieder. Bis wann er zu erledigen ist, der Titel des Tasks und ob er schon erledigt ist oder nicht. 
+Since the purpose of this project was more to learn React Native, the app's features are kept very simple. There is a main window where you can see all the tasks that have been created. They are sorted by date and display important information about the task, such as when it is due, the title of the task, and whether it has already been completed or not. 
 
-Die Liste gibt auch die Möglichkeit, den Task als erledigt zu markieren oder dies auch rückgängig zu machen und auch den Task zu löschen.
+The list also allows you to mark the task as completed or undo this, and also to delete the task.
 
 | ![Task App Main Screen](./main_screen.png) | ![Task App Main Screen after checking task](./main_screen_check.png) | ![Task App Main Screen after deleting task](./main_screen_delete.png) |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
-Im Hauptfenster gibt es auch einen Floating-Button, welcher das Hinzufügen von neuen Tasks erlaubt. Man kann den Titel eingeben, eine optionale Beschreibung, wie auch das Fälligkeitsdatum des Tasks. 
+The main window also features a floating button that allows you to add new tasks. You can enter the title, an optional description, and the due date of the task. 
 
 | ![Task App add task screen](./add_task.png) | ![Task App add task screen showing date selection](./add_task_select_date.png) |
 | ------------------------------------ | ------------------------------------ |
 
-
-Auch kann man auf einen Task in der Liste drücken, und man kommt auf eine Detailseite, wo man alle Informationen des Tasks, wie auch die Beschreibung einsehen kann. Wie auch in der Liste, kann man auch hier die Checkbox bestätigen und es gibt zwei Knöpfe, einen zum Löschen und einem zum Editieren des Tasks wo man alle Information Ändern kann.
+You can also click on a task in the list to go to a details page where you can view all the information about the task, including the description. As in the list, you can also check the checkbox here, and there are two buttons, one for deleting and one for editing the task, where you can change all the information.
 
 | ![Task App task detail screen](./task_detail_screen.png) | ![Task App task edit screen](./task_edit_screen.png) |
 | ------------------------------------ | ------------------------------------ |
 
-## Technologien
+## Technologies
 
-Als Technologies für die Taskapp habe ich React Native, zusammen mit dem Framework Expo verwendet. Dies war auch er Hauptgrund hinter dem Projekt um React Native zu lernen, da wir bisher nur Ionic in Verbindung mit Angular gelernt hatten. Ich habe verschiedene Sachen, wie den Expo Router oder React Komponenten verwendet, um die App zu erstellen. Alle Daten wurden lokal durch die library AsyncStorage gespeichert. Auch wurden zwei externe Komponenten verwendet, eine für einen Datepicker und einen für die Checkboxen.
-## Herausforderungen
+I used React Native together with the Expo framework as technologies for the task app. This was also the main reason behind the project to learn React Native, as we had only learned Ionic in conjunction with Angular so far. I used various things, such as the Expo Router or React components, to create the app. All data was stored locally using the AsyncStorage library. Two external components were also used, one for a date picker and one for the checkboxes.
 
-Die wahrscheinlich größte Herausforderung war das echte lernen von React Native, React generell hat einen sehr unterschiedlichen Aufbau im Gegensatz zu Ionic und Angular. Zum einen das man größtenteils in einer Datei arbeitete, wie auch die Verwendung von hooks, wie useState, für die Variablen Deklaration, useEffect, um Änderungen zum Beispiel Änderungen beim Initialisieren der Seite zu laden. Auch dass man im Normalfall viel mit Komponente arbeitet, also das Programm in viele Teile aufteilt, um sie oft wiederverwende zu können.
+## Challenges
+
+Probably the biggest challenge was really learning React Native. React in general has a very different structure compared to Ionic and Angular. For one thing, you mostly work in one file, and you use hooks such as useState for variable declaration and useEffect to load changes, for example when initializing the page. Also, you normally work a lot with components, i.e., you divide the program into many parts so that you can reuse them often.
  
-Auch das React Native an sich etwas limitiert ist. Zum Beispiel, um einen Datepicker oder eine Checkbox zu verwenden, müssen extra Libraries installiert werden. Das Gleiche gilt auch für die Navigation, welche auch etwas komplizierter war, da man zwischen der React Navigation Library und den dem Expo Router zu unterscheiden.
-## Learnings und Nächsten Schritte
+React Native itself is also somewhat limited. For example, to use a date picker or a checkbox, you have to install extra libraries. The same applies to navigation, which was also a bit more complicated because you have to distinguish between the React Navigation Library and the Expo Router.
 
-Ich bin sehr froh dieses Projekt gemacht zu haben, da ich vom Gefühl her ein größeres Verständnis von React Native und auch React generell erlangen konnte. Ich habe gelernt wie man Per React Native und Expo eine Native App für Android, IOS und Web bauen kann und auch wie die Grundlenden Konzepte von React funktionieren.
+## Lessons learned and next steps
 
-Nächste Schritte wären auf jeden Fall eine Vertiefung in React Native. Zum einen könnte ich dieses Projekt weiterführen und versuchen auszubauen, zum Beispiel mit einem eigenen Backend oder Funktionen, wie Filtern. Auch könnte ein neues Projekt begonnen werden, um sich andere Seiten React Native anzeigen. Ich könnte mir auch ein anderes Framework oder Vanilla React Native anschauen, um die Unterschiede zu sehen.
+I am very happy to have done this project, as I feel I have gained a greater understanding of React Native and React in general. I learned how to build a native app for Android, iOS, and the web using React Native and Expo, as well as how the basic concepts of React work.
+
+The next steps would definitely be to delve deeper into React Native. On the one hand, I could continue this project and try to expand it, for example with my own backend or functions such as filters. I could also start a new project to explore other aspects of React Native. I could also look at another framework or Vanilla React Native to see the differences.

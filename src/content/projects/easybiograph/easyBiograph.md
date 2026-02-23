@@ -1,50 +1,53 @@
 ---
-title: "Implementierung einer Undo Funktion für den easyBiograph"
+title: "Implementation of an undo function for easyBiograph"
 link: https://github.com/fhstp/easybiograph
 tags: ["Vue.js", "Vuex"]
-description: "Implementierung einer Undo Funktion für den easyBiograph"
+description: "Implementation of an undo function for easyBiograph"
 pubDate: '2025-07-17'
 heroImage: './easybiograph_01.png'
 featured: false
 ---
 
-## Einleitung
+## Introduction
 
-Der easyBiograph ist ein FH Projekt, welches original durch das EU-Programm Erasmus+ entstanden ist und davon gefördert wurde. Mithilfe des easyBiograph kann man die Familien-, Wohn-, Bildungs-, Arbeits-, Gesundheits- und Hilfe-Biografien einer Person entlang einer Zeitachse notieren und diese dann analysieren.
+easyBiograph is an FH project that was originally created and funded by the EU Erasmus+ program. With the help of easyBiograph, you can record a person's family, residential, educational, work, health, and support biographies along a timeline and then analyze them.
 
-Ich habe im Laufe der FH-Lehrveranstaltung "Tun-Forsche-Gründen" an diesem Projekt mitgearbeitet. Ziel der Lehrveranstaltung war es, dass andere StudentInnen oder auch Forschungsprojekte ein Arbeitspaket von ca. 80 Stunden ausschreiben konnten, und man sich dann für eines von diesen beworben hat. Ich habe mich hier eben für das Forschungsprojekt "easyBiograph" beworben. Dipl.-Ing. Mag. Alexander Rind hat mir dann verschiedene Arbeitspakete zum Aussuchen gegeben, im easyBiograph, wie auch im Projekt easyNWK, ein weiteres Projekt, für welches er Arbeitspakete ausgeschrieben hat.
+I worked on this project during the FH course “Tun-Forsche-Gründen” (Do-Research-Found). The aim of the course was for other students or research projects to advertise a work package of approx. 80 hours, and then to apply for one of these. I applied for the “easyBiograph” research project. Dipl.-Ing. Mag. Alexander Rind then gave me various work packages to choose from, both in easyBiograph and in the easyNWK project, another project for which he had advertised work packages.
 
-Hierbei habe ich mich dann dafür entschieden, eine undo Funktion einzubauen. Ziel der Funktion war es, dass man die einzelnen Arbeitsschritte, welche man bei der Verwendung des Biografen benutzt, wieder rückgängig machen kann und sie aber gleichzeitig auch wiederherstellen kann. Die Verwendung sollte hierbei auch den normalen Erwartungen einer Person entsprechen, zum Beispiel so wie man es von Microsoft Word gewöhnt ist.
-## Umsetzung
+I decided to implement an undo function. The aim of the function was to allow users to undo the individual steps they took when using the biographer, but also to restore them at the same time. The use of the function should also correspond to a person's normal expectations, for example, as one is accustomed to in Microsoft Word.
 
-Der easyBiograph hatte schon umfassende Funktionen, als ich bei diesem Projekt eingestiegen bin und mitgearbeitet habe. Man kann einen Biografen für eine Person erstellen und auf verschiedenen Eventachsen, welche man auch selbst erstellen kann, die Events eintragen. Auch kann man hineinzoomen und verschiedene Einstellungen treffen. Zum Beispiel das Farbschema der Oberfläche ändern oder zwischen Deutsch und Englisch umschalten. Der Biograf kann auch ausgedruckt werden.
+## Implementation
 
-![Appbild](./easybiograph_01.png)
+The easyBiograph already had comprehensive functions when I joined this project and started working on it. You can create a biography for a person and enter events on various event axes, which you can also create yourself. You can also zoom in and adjust various settings. For example, you can change the color scheme of the interface or switch between German and English. The biography can also be printed out.
 
-Der easyBiograph ist in Vue.js geschrieben und die undo Historie speziell verwendet den sogenannten Vuex Store. Dies ist eine Vue.js Library für State Management. Hierbei musste ich nicht von Grund auf ein undo und redo System entwickeln, sondern es gab schon eines im Forschungsprojekt easyNWK, an welchem ich mich orientieren konnte. Auch ein grundsätzliche System für die undo Historie gab es schon im easyBiograph, welches sich anhand dieser Repositories (https://github.com/anthonygore/vuex-undo-redo und https://easynwk.fhstp.ac.at/) orientiert hat. Grundsätzlich wird jede State Änderung (zum Beispiel ein neues Event, Änderungen der Einstellungen, ...) als Translation ausgeführt und als Liste gespeichert, um anhand dieser Liste die Aktion wieder rückgängig zu machen oder wiederherzustellen. 
+![App image](./easybiograph_01.png)
 
-Ich habe mich einmal damit beschäftigt, dass grundsätzliche System mit dem Rest des Biografen zu verbinden und zu schauen, wie gut es schon einmal funktioniert. Neue Knöpfe fürs Rückgängig machen und Wiederherstellen wurden eingefügt und das undo System damit verbunden. Hiermit konnte man schon einmal einfache Aktionen, wie zum Beispiel Event Erstellung, rückgängig machen. Dabei sind mir aber verschiedene Probleme aufgefallen.
+easyBiograph is written in Vue.js, and the undo history specifically uses the so-called Vuex Store. This is a Vue.js library for state management. I didn't have to develop an undo and redo system from scratch, as there was already one in the easyNWK research project that I could use as a guide. There was also already a basic system for the undo history in easyBiograph, which was based on these repositories (https://github.com/anthonygore/vuex-undo-redo and https://easynwk.fhstp.ac.at/). Basically, every state change (e.g., a new event, changes to settings, etc.) is executed as a translation and stored as a list so that the action can be undone or restored using this list. 
 
-Zum Beispiel wurden die Einstellungen, wie die Sprache oder das Farbschema, nicht richtig abgespeichert, wodurch sie nicht von Vuex erkannt wurden. Auch ergab sich ein größeres Problem: Manche Aktionen, wie das Zoomen in den Biografen oder das Ändern der Biograf-Einstellungen (Personendetails, Biograf Achsen) müssen den Biografen neu laden. Dies sorgt aber dafür, dass die Transaktionsliste gelöscht wird und es keinen Zugriff mehr auf die undo Historie gibt. 
+I once looked into connecting the basic system to the rest of the biographer and seeing how well it already works. New buttons for undo and restore were added and the undo system was connected to them. This allowed simple actions, such as event creation, to be undone. However, I noticed several problems.
 
-Hierbei musste ich mir etwas einfallen lassen, wodurch ich trotzdem noch die Transaktionsliste nach einem neu laden des Browsers habe. Hierbei habe ich den localStorage verwendet, eine Möglichkeit des Browsers um Werte zu speichern und auch nach einem neu laden noch Zugriff auf diese zuhaben. 
+For example, settings such as language or color scheme were not saved correctly, which meant that they were not recognized by Vuex. There was also a bigger problem: some actions, such as zooming in on the biographies or changing the biography settings (person details, biography axes), require the biographies to be reloaded. However, this causes the transaction list to be deleted and means that the undo history is no longer accessible. 
 
-Sobald eine dieser Aktionen ausgeführt wurde, habe ich die Transaktionsliste in den localStorage gespeichert und nach dem Laden sofort wieder herausgeholt, damit alle Transaktionen erhalten bleiben. Dies passiert aber nur bei diesen speziellen Einstellungsänderungen und nicht, wenn man die Seite normal verlassen würde, da die normale Erwartungshaltung ist, dass die undo Historie so lange erhalten bleibt, wie man arbeitet.
+I had to come up with a solution that would allow me to still have the transaction list after reloading the browser. I used localStorage, a browser feature that allows values to be saved and still be accessible after reloading. 
 
-![Appbild](./easybiograph_02.png)
-![Appbild](./easybiograph_03.png)
+Once one of these actions was performed, I saved the transaction list in localStorage and retrieved it immediately after loading so that all transactions were retained. However, this only happens with these specific setting changes and not when you leave the page normally, as the normal expectation is that the undo history will be retained as long as you are working.
 
-Sobald ich alles fertig hatte und getestet habe, habe ich eine merge Request im Repository erstellt, damit sich Dipl.-Ing. Mag. Alexander Rind meine Änderung auch anschauen und überprüfen konnte. Nachdem ich noch ein paar von ihm gewünschte Änderungen vorgenommen hatte, war er sehr zufrieden mit meinen Änderungen und hat diese abgenommen.
-## Fazit
+![App image](./easybiograph_02.png)
+![App image](./easybiograph_03.png)
 
-Es ist immer eine Herausforderung, in ein bestehendes Projekt einzusteigen und in diesem Änderungen vorzunehmen. Genauso ist es aber auch immer ein tolles Gefühl, das Projekt langsam aber sicher zu verstehen und dieses weiterzuentwickeln. Ich bin sehr froh, dass ich am easyBiograph mitentwickeln konnte und dass meine Arbeit sehr zufriedenstellend war.
+Once I had finished and tested everything, I created a merge request in the repository so that Dipl.-Ing. Mag. Alexander Rind could also view and review my changes. After I made a few more changes he requested, he was very satisfied with my changes and approved them.
+
+## Conclusion
+
+It is always a challenge to join an existing project and make changes to it. But it is also always a great feeling to slowly but surely understand the project and develop it further. I am very happy that I was able to contribute to the development of easyBiograph and that my work was very satisfying.
+
 ## Links
 
 - easyBiograph GitHub-Repository: [https://github.com/fhstp/easybiograph](https://github.com/fhstp/easybiograph)
-- easyBiograph Informationsseite: [https://easybiograph.fhstp.ac.at/](https://easybiograph.fhstp.ac.at/)
+- easyBiograph information page: [https://easybiograph.fhstp.ac.at/](https://easybiograph.fhstp.ac.at/)
 - easyNWK GitHub-Repository: [https://github.com/fhstp/easynwk-web](https://github.com/fhstp/easynwk-web)
-- easyNWK Informationsseite: [https://easynwk.fhstp.ac.at/](https://easynwk.fhstp.ac.at/)
+- easyNWK information page: [https://easynwk.fhstp.ac.at/](https://easynwk.fhstp.ac.at/)
 - Vue.js: [https://vuejs.org/](https://vuejs.org/)
 - Vuex: [https://vuex.vuejs.org/](https://vuex.vuejs.org/)
-- Inpirationsrepository: [https://github.com/factorial-io/undo-redo-vuex](https://github.com/factorial-io/undo-redo-vuex)
-- Inpirationsrepository: [https://github.com/anthonygore/vuex-undo-redo](https://github.com/anthonygore/vuex-undo-redo)
+- Inspiration repository: [https://github.com/factorial-io/undo-redo-vuex](https://github.com/factorial-io/undo-redo-vuex)
+- Inspiration repository: [https://github.com/anthonygore/vuex-undo-redo](https://github.com/anthonygore/vuex-undo-redo)

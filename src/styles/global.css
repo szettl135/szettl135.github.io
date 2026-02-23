@@ -50,17 +50,15 @@ html[data-theme="dark"] {
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
-
-	--bg: #0b1020;
-	--surface: #111a33;
-	--text: #e5e7eb;
-	--text-muted: #9ca3af;
-	--border: #273353;
-
-	--primary: #60a5fa;
-	--primary-contrast: #081026;
-
-	--focus: #60a5fa;
+  
+    --bg: #0d1117;
+    --surface: #1c1e26;
+    --text: #e0e7ff;
+    --text-muted: #a3b2d6;
+    --border: #252a3d;
+  
+    --primary: #e84118; /* Dragon fire */
+    --primary-contrast: #0d1117;
   }
 }
 

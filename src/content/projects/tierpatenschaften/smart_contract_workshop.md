@@ -1,8 +1,8 @@
 ---
-title: "Digitale Tierpatenschaften mit NFTs (ERC-1155 Smart Contracts)"
+title: "Digital Animal Sponsorships with NFTs (ERC-1155 Smart Contracts)"
 link: https://github.com/realJanWeiss/zoo-sponsorship
 tags: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
-description: "Digitale Tierpatenschaften mit NFTs"
+description: "Digital animal sponsorships with NFTs"
 pubDate: '2025-06-30'
 heroImage: './tierpatenschaften_01.png'
 featured: false
@@ -10,69 +10,72 @@ featured: false
 
 ## Einleitung
 
-Ziel des Projektes war es, den Adoptionsprozess eines Zoos über die Blockchain abzubilden. Hiermit sollten BesucherInnen leicht PatIn eines Tieres werden können, und deren Patenschaft würde auf der Blockchain gespeichert werden, wodurch dieses Zertifikat unveränderlich und permanent für alle sichtbar wäre. Das Projekt wurde innerhalb der 2025 Summer School an der FH St. Pölten innerhalb des Workshops "Smart Contracts: Token creation with ERC20" ([https://creativemediasummer.fhstp.ac.at/workshops/smart-contracts-token-creation-with-erc20](https://creativemediasummer.fhstp.ac.at/workshops/smart-contracts-token-creation-with-erc20)) erstellt. Nachdem wir über die Blockchain und Smart Contracts gelernt haben, konnten wir uns selbst ein eigenes Projekt für die Woche aussuchen und innerhalb der verbleibenden eineinhalb Tage entwickeln.
+The aim of the project was to map the adoption process of a zoo using blockchain technology. This would enable visitors to easily become sponsors of an animal, and their sponsorship would be stored on the blockchain, making this certificate immutable and permanently visible to everyone. The project was carried out during the 2025 Summer School at the St. Pölten University of Applied Sciences (Now USTP) as part of the workshop "Smart Contracts: Token creation with ERC20" ([https://creativemediasummer.fhstp.ac.at/workshops/smart-contracts-token-creation-with-erc20](https://creativemediasummer.fhstp.ac.at/workshops/smart-contracts-token-creation-with-erc20)). After learning about blockchain and smart contracts, we were able to choose our own project for the week and develop it within the remaining one and a half days.
 
-Der Workshop ging vom 23.06.2025 bis zum 27.06.2025, und dieses Projekt wurde in einer Gruppe von drei Personen, Jan Weiß, Vilmos Nagy und mir, Sebastian Zettl, erstellt. Zusammen haben wir uns verschiedene Ideen ausgedacht, bis wir bei der Tierpatenschaft gelandet sind. Wir mochten die Idee, und es hat sich nach einem guten Umfang für die vorgegebene Zeit des Projektes angefühlt.
+The workshop ran from June 23, 2025, to June 27, 2025, and this project was created by a group of three people: Jan Weiß, Vilmos Nagy, and me, Sebastian Zettl. Together, we came up with various ideas until we settled on animal sponsorship. We liked the idea, and it felt like a good scope for the given time frame of the project.
 
-Eine grundsätzliche Erklärung der wichtigsten Begriffe:
+A basic explanation of the most important terms:
 
-Die Blockchain ist eine dezentrale Datenbank, welche chronologisch daten speichert. Da sie dezentral ist, gibt es keinen zentralen Server, sondern es wird über mehrere "nodes" alles gespeichert. Ein Smart Contract ist ein programmierter Vertrag auf der Blockchain. Er führt bestimmte Abläufe aus, wenn die passenden Bedingungen erfüllt sind. Token sind digitales Vermögen, welche auf der Blockchain gespeichert sind. Es gibt hier verschiedene Standards, wie ein Token aussehen kann. Für uns relevant ist der ERC-1155 Stand, welcher es ermöglicht, mehrere Token des gleichen Types zu verkaufen. Hierdurch können mehre Personen die Paten des gleichen Tieres werden.
+The blockchain is a decentralized database that stores data chronologically. Since it is decentralized, there is no central server, instead, everything is stored across multiple “nodes.” A smart contract is a programmed contract on the blockchain. It executes certain processes when the appropriate conditions are met. Tokens are digital assets that are stored on the blockchain. There are various standards for how a token can look. Relevant for us is the ERC-1155 standard, which makes it possible to sell multiple tokens of the same type. This allows several people to become sponsors of the same animal.
 
-Dieser kombiniert auch ERC-20 und ERC-712. ERC-20 ist der Standard für austauschbare Token, welche man am ehesten mit normalen Währungen vergleichen kann. ERC-721 steht stattdessen für nicht austauschbare Token, welche einzigartig sind, welche zum Beispiel für Sachen wie Bilder oder Ticket verwendet werden können. Sie werden auch NFT (Non-Fungible Token) genannt.
-## Vorgehensweise / Umsetzung
+This also combines ERC-20 and ERC-712. ERC-20 is the standard for exchangeable tokens, which can best be compared to normal currencies. ERC-721, on the other hand, stands for non-exchangeable tokens, which are unique and can be used for things such as images or tickets. They are also called NFTs (non-fungible tokens).
 
-Für das Projekt wurde einer Vielfalt an Technologien verwendet.
+## Procedure / Implementation
 
-Am wichtigsten ist wahrscheinlich die Sprache Solidity. Dies ist eine High-Level und objektorientierte Programmiersprache, welche speziell für die Entwicklung von Smart Contracts entwickelt wurde. Unsere Tierpatenschaften Smart Contract wurde zusätzlich in Remix IDE entwickelt, eine spezielle IDE, welche auf Smart Contracts abgestimmt ist. Remix erlaubt das einfache Testen in EVM (Etherum Virtual Environments) von den entwickelten Contracts, bevor man sie in der echten Blockchain deployed.
+A variety of technologies were used for the project.
 
-Ich habe teilweise beim Entwickeln und Erlernen des Smart Contracts mitgewirkt. Ein Großteil des Contracts wurde aber von Vilmos Nagy entwickelt. Auch haben wir OpenZeppelin verwendet. Dies ist ein Open-Source-Framework. Dieses stellt zum Beispiel schon standardisierte Contracts für ERC-20 oder ERC-1155 bereit, sodass man selbst das Rad nicht neu erfinden muss.
+The most important is probably the Solidity language. This is a high-level, object-oriented programming language that was developed specifically for the development of smart contracts. Our animal sponsorship smart contract was also developed in Remix IDE, a special IDE tailored to smart contracts. Remix allows for easy testing of developed contracts in EVM (Ethereum Virtual Environments) before deploying them in the real blockchain.
 
-Grundsätzliche Funktionen beinhalten, dass der/die InhaberIn des Contracts, in diesem Fall der Zoo selbst, der einzige ist, welcher Token erstellen kann. Gäste, also andere UserInnen, können dann einen der vom Zoo bereitgestellten Token kaufen, um auf diese Weise das Tier zu adoptieren, wodurch der Token auch in der Kryptowallet des Gastes landet. Auch können die InhaberInnen des Token das Tier wieder zurückgegeben. Zusätzlich gibt es die Standardfunktionen, welche ein ERC-1155 Token beinhalten muss, wie zum Beispiel `balanceOf(address account, uint256 id)`, welcher die Anzahl an Token im Besitz der Adresse zurückgibt.
+I was partially involved in developing and learning about the smart contract. However, most of the contract was developed by Vilmos Nagy. We also used OpenZeppelin, which is an open-source framework. For example, it already provides standardized contracts for ERC-20 or ERC-1155, so you don't have to reinvent the wheel yourself.
 
-Weiter wurde auch das IPFS (InterPlanatary Filesystem) verwendet. Dies ist ein dezentraler Ort um Dateien, wie zum Beispiel Bilder oder Dateien wie JSONs, abzulegen. Wir haben hierfür Pinata verwendet, einen IPFS Storage Anbieter. In Pinata haben wir die Bilder für die Tier NFTS plus JSONs mit ein paar Informationen zu den Tieren abgelegt. Wenn eine Person ein Tier adoptiert, dann landet ein NFT davon in ihrer Wallet und das Bild, plus die Informationen im JSON, werden von Pinata geholt, und in der Kryptowallet des/der PatIn  angezeigt.
+Basic functions include that the owner of the contract, in this case the zoo itself, is the only one who can create tokens. Guests, i.e., other users, can then purchase one of the tokens provided by the zoo in order to adopt the animal, which means that the token also ends up in the guest's crypto wallet. The owners of the token can also return the animal. In addition, there are the standard functions that an ERC-1155 token must include, such as `balanceOf(address account, uint256 id)`, which returns the number of tokens owned by the address.
+
+Furthermore, the IPFS (InterPlanetary File System) was also used. This is a decentralized location for storing files such as images or JSONs. We used Pinata, an IPFS storage provider, for this purpose. In Pinata, we stored the images for the animal NFTs plus JSONs with some information about the animals. When a person adopts an animal, an NFT of it ends up in their wallet and the image, plus the information in the JSON, is retrieved from Pinata and displayed in the adopter's crypto wallet.
 
 ![Appbild](./tierpatenschaften_06.png)
 
 ### Backend
 
-Damit wir den Smart Contract dann auch in Verbindung mit dem Frontend verwenden können, mussten wir ihn irgendwo hin deployen. Nachdem wir es in dem lokalen EVM getestet haben, gab es zwei Möglichkeiten: über eine Kryptowallet, zum Beispiel MetaMask, kann man einen Smart Contract in ein Testnetz hochladen, um es dort testen zu können. In unserem Fall wäre diese Testnetz Sepolia gewesen.
+In order to use the smart contract in conjunction with the frontend, we had to deploy it somewhere. After testing it in the local EVM, there were two options: using a crypto wallet, such as MetaMask, you can upload a smart contract to a test network to test it there. In our case, this test network would have been Sepolia.
 
-Wir haben uns aber für die zweite Möglichkeit entschieden, es in einer lokalen Blockchain zu deployen. Dafür habe ich mir die Möglichkeiten angeschaut und mich für Hardhat entschieden. Mit Hardhat kann man eine lokale Blockchain starten, auf welche man Smart Contracts deployen kann.
+However, we decided on the second option of deploying it in a local blockchain. I looked at the options and decided on Hardhat. With Hardhat, you can start a local blockchain on which you can deploy smart contracts.
 
-Dies habe ich mir angeschaut und mich eingelesen. Ich habe Hardhat einmal installiert und den Smart Contract abgelegt. Mit Hardhat gab es keine Probleme, den Contract einmal zu kompilieren, um den ABI (Application Binary Interface) zu bekommen, damit externe Applikationen damit interagieren können. Danach habe ich auch mit Hilfe von viem, eine TypeScript/JavaScript-Bibliothek fürs Interagieren mit der Blockchain, eine Deployment Script geschrieben. Dieses Script, zum einen, stellt den Contract auf die lokale Blockchain, holt die Adresse, auf der der Contract liegt und schreibt diese in eine JSON Datei, welche vom Frontend eingelesen wird, damit es Befehle an diese Adresse schicken kann.
+I looked into this and read up on it. I installed Hardhat and stored the smart contract. With Hardhat, there were no problems compiling the contract once to get the ABI (Application Binary Interface) so that external applications could interact with it. Then, with the help of viem, a TypeScript/JavaScript library for interacting with the blockchain, I wrote a deployment script. This script places the contract on the local blockchain, retrieves the address where the contract is located, and writes it to a JSON file, which is read by the frontend so that it can send commands to this address.
+
 ### Frontend
 
-Das Entwickeln des Smart Contracts war zwar einer der wichtigsten Teile, aber wir wollten auch zusätzlich ein kleines Frontend entwickeln, um die Funktionen besser darstellen zu können. Hierfür haben wir mit Next.js, einem React.js Framework, ein einfaches Frontend erstellt. Hierfür hatte Jan Weiß einmal das grundsätzliche Aussehen entwickelt, während der Smart Contract entwickelt wurde. Beim Aussehen der Website habe ich mitgeholfen, aber ein Großteil hier wurden von Jan Weiß gemacht. Der Großteil meiner Arbeit im Frontend hat die Verbindung mit einer Kryptowallet und dem Contract beinhaltet.
+Developing the smart contract was one of the most important parts, but we also wanted to develop a small frontend to better showcase the features. To do this, we created a simple frontend using Next.js, a React.js framework. Jan Weiß developed the basic look while the smart contract was being developed. I helped with the look of the website, but most of it was done by Jan Weiß. Most of my work on the frontend involved connecting to a crypto wallet and the contract.
 
-Für die Verbindung habe ich Wagmi.js verwendet. Es ist eine React Hook Library, um einfacher mit der Blockchain zu kommunizieren. Es erlaubt, leichter Verbindung zu einer Kryptowallet aufzunehmen und bietet verschiedene Hooks an, welche im Hintergrund viem verwendet, um mit dem deplyoten Contract zu interagieren.
+I used Wagmi.js for the connection. It is a React Hook library that makes it easier to communicate with the blockchain. It allows for easier connection to a crypto wallet and offers various hooks that are used in the background to interact with the deployed contract.
 
-Die grundsätzlichen Funktionen unseres Frontends inkludieren eine Hauptseite aller Tiere plus Detailseiten für jede Tierart. Auf der Hauptseite kann man sehr gut alle Tiere aufgelistet sehen. Im Header ist zum einen das Logo des Zoos "Happy Paws Zoo" zu finden, wie auch eine Loginbutton, über den man eine Kryptowallet verbinden kann.
+The basic functions of our frontend include a main page showing all animals plus detail pages for each animal species. The main page provides a clear overview of all animals. The header features the logo of the “Happy Paws Zoo” as well as a login button that can be used to connect a crypto wallet.
 
 ![Appbild](./tierpatenschaften_01.png)
 
-Sobald man auf ein Tier klickt kommt man auf eine Detailseite mit verschiedenen Information zu diesem Tier, so wie man es auch in einem echten Tiergarten vorfinden würde. Weiter unten in der Beschreibung gibt es dann die Möglichkeit, Pate der verschiedenen Tiere zu werden.
+As soon as you click on an animal, you are taken to a detailed page with various information about that animal, just as you would find in a real zoo. Further down in the description, you then have the option of becoming a sponsor for the various animals.
 
 ![Appbild](./tierpatenschaften_02.png)
 
-Es werden konkrete Tiere in einer von mir erstellten Cardview angezeigt, zusammen mit den Informationen, wie viele Patenschaften noch offen sind, und ob man das Tier schon adoptiert hat, oder es noch frei ist und adoptiert werden kann.
+Specific animals are displayed in a card view I created, along with information on how many sponsorships are still available and whether the animal has already been adopted or is still available for adoption.
 
 ![Appbild](./tierpatenschaften_03.png)
 
-Wenn man ein Tier adoptieren will, muss man zuerst eine Kryptowallet verbinden, danach kann man über den Adoptieren-Button eine Transaktion über die Kryptowallet bestätigen. Nach einer kurzen Wartezeit sieht man dann, dass das Tier adoptiert wurde und wenn man in die Wallet hineinschaut, dann sieht man ein NFT des adoptieren Tieres zusammen mit einer kleinen Beschreibung und einem Bild.
+If you want to adopt an animal, you first have to connect a crypto wallet, then you can confirm a transaction via the crypto wallet using the Adopt button. After a short wait, you will see that the animal has been adopted, and if you look in the wallet, you will see an NFT of the adopted animal along with a short description and a picture.
 
 ![Appbild](./tierpatenschaften_04.png)
 ![Appbild](./tierpatenschaften_05.png)
 
-## Persönliche Erfahrungen und Fazit
+## Personal experiences and conclusion
 
-Der Workshop war ein sehr interessantes Erlebnis für mich. Vor dem Workshop hatte ich nicht wirklich eine Ahnung von der Blockchain, außer den Informationen, welchen man hie und da im Internet liest. Also war der Workshop eine großartige Möglichkeit, zumindest einmal mehr über diese Technologie zu erfahren. Ich habe ein besseres Verständnis gewonnen plus auch die Erfahrung, dass ich mich zurzeit nicht viel mehr mit dieser Technologie befassen will. Meiner Meinung nach gibt es zurzeit noch mehr Probleme, wie folgendes, dass es einen hohen Stromkonsum mit sich bringt, und der Gewinn einer permanenten, chronologisch geordneten und immer erreichbaren Datenbank diesen zurzeit noch nicht übersteigt.
+The workshop was a very interesting experience for me. Before the workshop, I didn't really know anything about blockchain, except for the information you can find here and there on the internet. So the workshop was a great opportunity to learn more about this technology. I gained a better understanding of it, but also realized that I don't want to deal with this technology much more at the moment. In my opinion, there are currently still more problems, such as the fact that it consumes a lot of electricity, and the benefits of a permanent, chronologically ordered, and always accessible database do not yet outweigh this.
 
-Die wahrscheinlich größte Herausforderung war, dieses ganze Projekt innerhalb nicht einmal eineinhalb Tagen auf die Beine zu stellen. Es war eine Herausforderung, vor allem wenn man davor noch nicht wirklich viel Erfahrung mit der Blockchain hatte.
+Probably the biggest challenge was getting this whole project up and running in less than a day and a half. It was a challenge, especially if you didn't have much experience with blockchain before.
 
-Wir als Team haben dies aber unsere Meinung nach gut geschafft und sind alle wirklich stolz auf unser Ergebnis.
+However, as a team, we think we did a good job and are all really proud of our results.
 
-Zusammenfassend bin ich wirklich froh, diesen Workshop gemacht zu haben.
-## Links und Quellen
+In summary, I'm really glad I did this workshop.
+
+## Links and sources
 
 - GitHub-Repository: [https://github.com/realJanWeiss/zoo-sponsorship](https://github.com/realJanWeiss/zoo-sponsorship)
 - Remix IDE: [https://remix-project.org/?lang=en](https://remix-project.org/?lang=en)

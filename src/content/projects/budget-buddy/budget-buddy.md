@@ -1,5 +1,5 @@
 ---
-title: "Budget Buddy - Digitales Haushaltsbuch"
+title: "Budget Buddy - Digital Household Budget Book"
 tags: ["Ionic", "Angular", "Nest.js", "TypeScript"]
 description: "Digital Housefold book created with Ionic and Nest.js"
 pubDate: '2025-06-12'
@@ -7,96 +7,104 @@ heroImage: './budget_buddy.svg'
 featured: true
 ---
 
-## Erstes Semester
+## First semester
 
-Teil des ersten Semesters in der Mobile Masterklasse war es das Ziel, ein eigenes Projekt zu programmieren, welches man selbst definieren durfte. In letzter Zeit hatte ich mich vertrauter mit Finanzen gemacht und habe mich deshalb wegen digitalen Haushaltsbüchern umgeschaut. Nach ein wenig suchen fand ich aber keines, welche leicht das Eintragen auf Mobile wie auch am Desktop ermöglichte. Nachdem wir im Unterricht die Multiplattform Sprache [[21.11 Ionic|Ionic]] gelernt haben, hatte sich hier die Möglichkeit angeboten, selbst ein Haushaltsbuch zu erstellen. Nachdem das Erstellen eines Haushaltsbuchs eine größere Angelegenheit ist, war für zuerst einmal der Fokus, Basisfunktionen, wie das Erstellen von Konten und das Durchführen von Transaktionen auf diesen Konten, zu implementieren.
+Part of the first semester in the Mobile Masterclass was to program your own project, which you were allowed to define yourself. I had recently become more familiar with finances and was therefore looking around for digital household accounts. After a little searching, however, I couldn't find any that made it easy to enter data on both mobile and desktop devices. After learning the multi-platform language [[21.11 Ionic|Ionic]] in class, I had the opportunity to create my own household account. Since creating a household budget book is a major undertaking, the initial focus was on implementing basic functions such as creating accounts and performing transactions on these accounts.
+
 ### Features
 
-Wie gesagt habe ich mich in diesem Projekt erst einmal auf die Hauptfunktionen fokussiert:
-#### Anmeldung
+As mentioned, I focused on the main functions in this project:
 
-Es gibt ein einfaches Anmeldeformular, welches unbefugte User vom Einsehen der Daten stoppt. Wenn man nicht eingeloggt ist, kann man weder das Backend bedienen, noch kann man im Frontend auf andere Seite navigieren, außer der Login Seite. Bisher gibt es nur einen vor angelegten User, welcher Zugriff auf alles hat. Hier gibt es aber Pläne, die Funktionen auszubauen.
+#### Login
 
-Wenn man eingeloggt ist, gibt es dann auf der Hauptseite eine Tab-Bar mit einer Profilseite, wo man sich bisher einfach wieder ausloggen kann.
+There is a simple login form that prevents unauthorized users from viewing the data. If you are not logged in, you cannot use the backend or navigate to other pages in the frontend except for the login page. So far, there is only one pre-created user who has access to everything. However, there are plans to expand the functions.
 
-| !['Login Screen'](login_screen.png) | !['Profile Screen'](profile_screen.png) |
-| ------------------------------------ | ------------------------------------ |
-#### Kontenansicht
+Once you are logged in, there is a tab bar on the main page with a profile page where you can simply log out again.
 
-Der zweite Tab auf der Tab-Bar ist für die Konten, auf welche man die Transaktionen gibt. Jedes Konto hat einfach einen Namen, und sie werden dem Namen nach geordnet. Auch kann man den Gesamtbetrag aller Transaktionen auf diesem Konto einsehen.
+| ![‘Login Screen’](login_screen.png) | ![‘Profile Screen’](profile_screen.png) |
+| --------------------------- --------- | ------------------------------------ |
 
-Wie auch auf der Transaktionsseite gibt es hier die Möglichkeit neue Konten hinzuzufügen, durch auf sie draufdrücken zu editieren und durch nach links ziehen zu löschen. Wenn man ein Konto löscht, werden auch alle Transaktionen auf diesem Konto gelöscht. 
+#### Account view
 
-| !['Accounts Screen'](accounts_screen.png) | !['New Account Screen'](new_account_screen.png) | !['Delete Account Action'](delete_account_action.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+The second tab on the tab bar is for the accounts to which you enter transactions. Each account simply has a name, and they are sorted by name. You can also view the total amount of all transactions on this account.
 
-#### Transaktionsansicht
+As on the transaction page, you can add new accounts here, edit them by tapping on them, and delete them by swiping left. When you delete an account, all transactions on that account are also deleted. 
 
-Wenn man eingeloggt ist und man sich auf der Hauptseite nun befinden, sieht man unten drei Tabs. Zuerst wird man auf der Transaktionsseite erscheinen. Hier sieht man alle Transaktionen, nach Datum aufgelistet und nach Monat gruppiert. 
+| ![‘Accounts Screen’](accounts_screen.png) | ![‘New Account Screen’](new_account_screen.png) | ![‘Delete Account Action’](delete_account_action.png) |
+| ----------------------------------- - | ------------------------------------ | ------------------------------------ |
 
-Man kann bei den Transaktionen erkennen, ob Geld abgehoben oder eingezahlt wurde und weiterführen Informationen, wie welches Konto für die Transaktion verwendet wurde und an welchem Datum sie durchgeführt wurde. Auch kann man eine optionale Beschreibung vergeben und man kann die Kategorie der Transaktion sehen. Die Transaktionen sind vorgefertigte Einträge in der Datenbank, welche man zum Einorden der Transaktionen verwenden kann.
+#### Transaction view
 
-Auf dieser Seite kann man auch neue Transaktionen mit dem Floating Button hinzufügen. Beim Klicken auf eine Transaktion diese editieren oder durch das nach links ziehen einer Transaktion diese auch löschen.
+When you are logged in and on the main page, you will see three tabs at the bottom. The first tab takes you to the transaction page. Here you can see all transactions listed by date and grouped by month. 
 
-| !['Transaction Screen'](transaction_screen.png) | !['Add Transaction Screen'](add_transaction_screen.png) | !['Delete Transaction Action'](delete_transaction_action.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+You can see whether money was withdrawn or deposited, as well as further information such as which account was used for the transaction and on what date it was carried out. You can also add an optional description and see the category of the transaction. The transactions are predefined entries in the database that you can use to classify your transactions.
 
-### Technologien
+On this page, you can also add new transactions using the floating button. Click on a transaction to edit it or drag a transaction to the left to delete it.
 
-Für das Frontend habe ich Ionic in Verbindung mit Angular verwendet. Im Backend habe ich NestJS verwendet. Weiters habe ich für das Backend auch verschiedene Libraries, wie TypeOrm für das Objekt und Relation Mapping, class-validator für Validieren der Requests und Responses oder bcrypt zum Verschlüsseln der Passwörter verwende. 
+| ![‘Transaction Screen’](transaction_screen.png) | ![‘Add Transaction Screen’](add_transaction_screen.png) | ![‘Delete Transaction Action’](delete_transaction_action.png) |
+| ------------------------------------ | ------------------------------------ | --------------------- --------------- |
 
-Die Anmeldung funktioniert über einen JWT, welcher im Backend generiert wird und ans Frontend geschickt wird. Zum einen sind die Routen im Backend gesichert, aber auch im Frontend sind bestimmte Seiten nur mit gültigem JWT erreichbar.
-### Herausforderungen
+### Technologies
 
-Ich war schon in meinem Bachelor Studium mit Ionic bekannt geworden und habe auch ein Semesterprojekt in diesem abgeschlossen. Daher war mir die Verwendung schon etwas bekannt. Aber mit NestJS hatte ich noch keinen Kontakt, vor allem nicht mit dem Objekt Relation Mapping. Vor allem auch nicht die Verbindung zwischen Ionic und NestJS. 
+For the frontend, I used Ionic in conjunction with Angular. For the backend, I used NestJS. I also used various libraries for the backend, such as TypeOrm for object and relation mapping, class-validator for validating requests and responses, and bcrypt for encrypting passwords. 
 
-Hier hat das Übungsprojekt, welches wir im Unterricht gemacht habe, sehr geholfen. Ich wusste, wie der generelle Aufbau sein sollte und wie man richtig beginnt. Dadurch konnte ich mir Stück für Stück auch selbst das Wissen aneigne und mein NestJS Backend erstellen und dieses mit meinem Ionic Frontend verbinden.
-### Learnings und Nächste Schritte
+Login works via a JWT, which is generated in the backend and sent to the frontend. On the one hand, the routes in the backend are secured, but on the other hand, certain pages in the frontend can only be accessed with a valid JWT.
 
-Ich konnte einiges aus diesem Projekt lernen, vor allem in der Verwendung von NestJS. Aber auch in der Verwendung von Ionic. Da das Semesterprojekt im Team gemacht wurde, ist es natürlich vorgenommen, dass manche Teile von Ionic weniger behandelt wurden. Aber jetzt, nach diesem Projekt habe ich das Gefühl, um einiges standfester mit Ionic und NestJS zu sein.
+### Challenges
 
-In den nächsten Semestern würde ich dieses Projekt auch gerne weiterführend, größtenteils für mich selbst. Ich würde gerne das System weiter ausbauen, zum Beispiel mit einer Grafikansicht der Ausgaben und Einnahmen oder einem System, welches verscheiden Abonnements tracken kann.
+I had already become familiar with Ionic during my bachelor's degree and also completed a semester project in it. Therefore, I was already somewhat familiar with its use. However, I had not yet had any contact with NestJS, especially not with object relation mapping. Above all, I was unfamiliar with the connection between Ionic and NestJS. 
 
-## Zweites Semester
+The exercise project we did in class was very helpful here. I knew what the general structure should be and how to get started correctly. This allowed me to acquire the knowledge piece by piece and create my NestJS backend and connect it to my Ionic frontend.
 
-Auch im zweiten Semester ist es Teil der Aufgaben in der Mobile Masterklasse, dass man ein eigenes Semesterprojekt programmiert. Ich war sehr daran interessiert, mein digitales Haushaltsbuch, welches in Ionic + Angular geschrieben wurde, aus dem letzten Semester weiterzuführen. Dabei wollte ich die grundsätzlichen Funktionen etwas verbessern und neue hinzuzufügen. Grundsätzlich wollte ich meinen Code refactoren, um Verbesserungen der Dozenten einzubauen, aber auch ihn selbst zu verbessern. Weiters wollte ich meine Userfunktionen erweitern, das sich neue User registrieren können und das Accounts und Transaktionen nur User bezogen sind. Zuletzt wollte ich auch Graphen einbauen, um die Ausgaben und Eingaben grafisch darzustellen.
+### Lessons learned and next steps
+
+I learned a lot from this project, especially about using NestJS. But also about using Ionic. Since the semester project was done as a team, it's natural that some parts of Ionic were covered less. But now, after this project, I feel much more confident with Ionic and NestJS.
+
+In the coming semesters, I would like to continue this project, mainly for myself. I would like to expand the system further, for example with a graphical view of expenses and income or a system that can track various subscriptions.
+
+## Second semester
+
+In the second semester, part of the Mobile Masterclass assignment is to program your own semester project. I was very interested in continuing my digital household budget book, which was written in Ionic + Angular last semester. I wanted to improve the basic functions and add new ones. Basically, I wanted to refactor my code to incorporate improvements suggested by the lecturers, but also to improve it myself. Furthermore, I wanted to expand my user functions so that new users could register and accounts and transactions were user-specific. Finally, I also wanted to incorporate graphs to display expenses and income graphically.
+
 ### Features
 
-#### Registrierung
+#### Registration
 
-Es war schon davor möglich, sich einzuloggen. Dies war aber nur über einen schon vordefinierten Testaccount möglich. Nun gibt es die Möglichkeit, auch neue User anzulegen. Diese neue Seite kann man leicht von der Loginseite erreichen und auch wieder zur Loginseite zurückkehren. 
+It was already possible to log in before. However, this was only possible via a predefined test account. Now it is also possible to create new users. This new page can be easily accessed from the login page and you can also return to the login page. 
 
-Wie beim Login kommt man bei der erfolgreichen Registrierung auf die Transaktionssicht. Jeder User bekommt am Anfang auch standardmäßig ein Konto namens "Bankkonto", damit sie gleich mit dem Transaktions einfügen starten können. Auch habe ich die Profilseite etwas schöner gemacht. Es gibt ein Default User Image und man sieht die E-Mail des eingeloggten Users.
+As with the login, successful registration takes you to the transaction view. Each user also receives a default account called “Bank Account” at the beginning so that they can start adding transactions right away. I have also made the profile page a little nicer. There is a default user image and you can see the email address of the logged-in user.
 
-| !['Register Screen'](register_screen.png) | !['New Profile Screen'](profile_screen_2.png) |
+| ![‘Register Screen’](register_screen.png) | ![‘New Profile Screen’](profile_screen_2.png) |
 | ------------------------------------ | ------------------------------------ |
-#### Grafenansicht
 
-In der Tabbar unten gibt es jetzt einen neuen Tab namens "Statsitics". Über diesen kommt man dann auf die Grafikansicht. In dieser Ansicht kann man grundsätzlich einmal zwischen den Einnahmen und Ausgaben wechseln. Auch kann man den Zeitraum angeben. Entweder kann man ein Monat eines Jahres auswählen. Man kann aber auch zur Jahresansicht über ein Dropdown wechseln, wo man dann alle Transaktionen des ausgewählten Jahres sieht.
+#### Graph view
 
-In der eigentlichen Grafikansicht werden Kreisdiagramme verwendet. Diese zeigen die Anteile der Ausgaben/Eingaben einer bestimmten Kategorie in diesem Monat/Jahr. Beim hovern kann man auch den genauen Betrag dieser Kategorie sehen. Zusätzlich gibt es unten eine Listenansicht mit den Kategorien und Beträgen, welche zusätzlich anhand der Prozentanteile im Kreisdiagramm geordnet sind
+There is now a new tab called “Statistics” in the tab bar at the bottom. This takes you to the graph view. In this view, you can switch between income and expenses. You can also specify the time period. You can either select a month of the year or switch to the annual view via a drop-down menu, where you can see all transactions for the selected year.
 
-| !['Spendings Statistics Screen'](statistics_screen_spendings.png) | !['Spendings Statistics Screen 2'](statistics_screen_spendings2.png) | !['Earnings Statistics Screen'](statistics_screen_earnings.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+Pie charts are used in the actual graphics view. These show the proportions of expenditure/income for a specific category in that month/year. When you hover over them, you can also see the exact amount for that category. In addition, there is a list view at the bottom with the categories and amounts, which are also sorted according to the percentages in the pie chart
 
-### Technologien
+| ![‘Spendings Statistics Screen’](statistics_screen_spendings.png) | ![‘Spendings Statistics Screen 2’](statistics_screen_spendings2.png) | ![‘Earnings Statistics Screen’](statistics_screen_earnings.png) |
+| ------------------------- ----------- | ------------------------------------ | ------------------------------------ |
 
-Im Frontend verwende ich weiterhin Ionic in Verbindung mit Angular und im Backend NestJS. Aber es sind manche Technologien hinzugekommene. Im Backend habe ich meine Swagger Dokumentation ausgebaut, welche zwar schon im Projekt enthalten war, aber noch nicht richtig verwendet wurde. Swagger dient dazu, REST Endpunkte zu dokumentieren. Dies habe ich gemacht, da ich im Frontend OpenAPI verwenden wollte. OpenAPI generiert automatisch die nötigen Klassen aus der Swagger Dokumentation, um im Frontend mit den gleichen Klassen und Methoden wie im Backend arbeiten zu können. Bevor OpenAPI musste ich für alle Entities im Backend auch Klassen im Frontend erstellen, zusammen mit dem manuellem aufrufen der Routen.
+### Technologies
 
-Mit OpenAPI kann ich nun über die generieren Service Klassen, einfach Methoden verwenden, welche die Route aufrufen und alles selbst abhandeln und zusammen mit den nötigen Modellen. Zusätzlich habe ich das package "Ngx-charts" verwendet, welches es mir ermöglicht, interaktive Diagramme in Ionic erstellen zu können.
-### Herausforderungen
+I continue to use Ionic in conjunction with Angular in the frontend and NestJS in the backend. However, some technologies have been added. In the backend, I expanded my Swagger documentation, which was already included in the project but had not yet been used properly. Swagger is used to document REST endpoints. I did this because I wanted to use OpenAPI in the frontend. OpenAPI automatically generates the necessary classes from the Swagger documentation so that I can work with the same classes and methods in the frontend as in the backend. Before OpenAPI, I had to create classes in the frontend for all entities in the backend, along with manually calling the routes.
 
-Die Verwendung von Ionic und NestJS war bei diesem Projekt jetzt schon weniger eine Herausforderung als beim letzten. Zusätzlich haben wir zu Beginn des Semesters in der Wild Week ein Projekt mit NestJS und Ionic + React gemacht, wo ich auch auf Wissen von diesem Zurückgreifen konnte.
+With OpenAPI, I can now use the generated service classes to easily call methods that handle everything themselves, along with the necessary models. I also used the “Ngx-charts” package, which allows me to create interactive charts in Ionic.
 
-Die größte Herausforderung war wahrscheinlich die Graphen Bibliothek, "ngx-charts". Hier war nämlich das Problem, dass die Dokumentation nicht wirklich gut war. Man sieht zwar, welche Graphen es gibt und welche Einstellungen man bei diesen Treffen kann, aber in der Doku gibt es nicht wirklich Beispielcode oder Beispiele, was sich die Methoden erwarten. Auch hat die Dokumentation nicht komplett gestimmt. Zum Beispiel wurde beim Kreisdiagramm in der Dokumentation ein Attribut erwähnt, welches das echte überhaupt nicht besessen hat.
+### Challenges
 
-Dies hat es manchmal schwer gemacht, die Graphen wirklich gut zu verwenden. Aber es gab eine gute Sache, nämlich das es eine Demo Seite gibt, wo man sich zumindest anschauen konnte, wie die ganzen verschiedenen Graphen aussehen und diese auch selbst anpassen konnte, über bereitgestellte Checkboxen und Inputs. Leider waren dies aber auch nicht komplett hilfreich bei der konkreten Implementierung.
+Using Ionic and NestJS was less of a challenge in this project than in the last one. In addition, at the beginning of the semester, we did a project with NestJS and Ionic + React during Wild Week, where I was also able to draw on my knowledge of these tools.
 
-### Learnings und Nächste Schritte
+The biggest challenge was probably the graph library, “ngx-charts.” The problem here was that the documentation wasn't very good. You can see which graphs are available and which settings you can use for them, but the documentation doesn't really provide any sample code or examples of what the methods expect. The documentation was also not entirely accurate. For example, the documentation mentioned an attribute for the pie chart that the actual chart didn't have at all.
 
-Zum einen habe ich gelernt, wie man OpenAPI mit NestJS und Ionic + Angular verwendet. Hierbei konnte ich glücklicherweise auf einen Blogeintrag meines Studienkollegen Jan Weiß zurückgreifen, welcher sehr geholfen hat. Wenn in NestJS alles dokumentiert ist, ist es sehr leicht im Frontend zu beginnen, die Klassen einfach zu verwenden. 
+This sometimes made it difficult to use the graphs effectively. But there was one good thing: there is a demo page where you can at least see what all the different graphs look like and customize them yourself using the checkboxes and inputs provided. Unfortunately, these weren't entirely helpful for the actual implementation either.
 
-Auch weiß ich nun, wie man Grafikansichten in Ionic Angular einbauen kann. Zwar kann es andere Grafen Bibliotheken geben, mit anderer Funktionsweise, ich weiß aber jetzt, wie diese unter Umstände grundsätzlich zu verwenden sind.
+### Lessons learned and next steps
+
+First, I learned how to use OpenAPI with NestJS and Ionic + Angular. Fortunately, I was able to refer to a blog post by my fellow student Jan Weiß, which was very helpful. When everything is documented in NestJS, it is very easy to start using the classes in the frontend. 
+
+I also now know how to integrate graphic views into Ionic Angular. Although there may be other graph libraries with different functionalities, I now know how to use them in principle under certain circumstances.
 
 
 

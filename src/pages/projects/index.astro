@@ -12,6 +12,6 @@ const tags = [...new Set(projects.flatMap((post) => post.data.tags ?? []))].sort
 ---
 
 <BaseLayout>
-    <h1>Projekte</h1>
+    <h1>Projects</h1>
     <FilterableProjectList id="all-projects" projects={projects} />
 </BaseLayout>

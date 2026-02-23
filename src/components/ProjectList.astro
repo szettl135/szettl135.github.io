@@ -42,7 +42,7 @@ ul li {
 }
 ul li * {
 	text-decoration: none;
-	transition: 0.2s ease;
+	/* transition: 0.2s ease; */
 }
 /* ul li:first-child {
 	width: 100%;
@@ -63,19 +63,19 @@ ul li img {
 }
 ul li a {
 	display: block;
+	color: var(--text);
 }
 .title {
 	margin: 0;
-	color: rgb(var(--text));
 	line-height: 1;
 }
 .date {
 	margin: 0;
-	color: rgb(var(--gray));
+	color: var(--text-muted);
 }
 ul li a:hover h4,
 ul li a:hover .date {
-	color: rgb(var(--primary));
+	color: var(--primary);
 }
 ul a:hover img {
 	box-shadow: var(--box-shadow);
