@@ -1,11 +1,11 @@
 ---
-import Image from 'astro/components/Image.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 import image from '../assets/photo.jpg';
 
 import ProjectList from '../components/ProjectList.astro';
+import { Image } from 'astro:assets';
 
 
 const projects = (await getCollection('project')).filter(
