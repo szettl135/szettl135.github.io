@@ -8,4 +8,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://szettl135.github.io',
 	integrations: [mdx(), sitemap()],
+	output: "static",
 });
