@@ -55,7 +55,6 @@ const hasAnyIcon = hasIconSlot || !!icon;
     background: var(--surface);
   }
 
-  /* Desktop */
   .link {
     --icon-size: 22px;
     display: flex;
@@ -70,8 +69,6 @@ const hasAnyIcon = hasIconSlot || !!icon;
     height: var(--icon-size);
     display: grid;
     place-items: center;
-
-    /* wenn dein SVG fill="currentColor" nutzt */
     color: var(--text);
     flex: 0 0 auto;
   }
@@ -80,7 +77,6 @@ const hasAnyIcon = hasIconSlot || !!icon;
       transform: translateY(-2px);
 	}
 
-  /* sorgt dafür, dass inline SVGs und imgs wirklich skalieren */
   .icon :global(svg),
   .icon :global(img) {
     width: 100%;
@@ -90,7 +86,6 @@ const hasAnyIcon = hasIconSlot || !!icon;
 
   .name { font-weight: 600; }
 
-  /* Mobile: Icon größer + oben */
   @media (max-width: 720px) {
     .link {
       --icon-size: 36px;
