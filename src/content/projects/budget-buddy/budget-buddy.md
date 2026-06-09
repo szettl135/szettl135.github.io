@@ -1,6 +1,7 @@
 ---
 title: "Budget Buddy - Digital Household Budget Book"
-tags: ["Ionic", "Angular", "Nest.js", "TypeScript"]
+tags: ["Frontend", "Backend", "Design", "Mobile App", "Web App"]
+technology: ["Ionic", "Angular", "Nest.js", "TypeScript"]
 description: "Digital Housefold book created with Ionic and Nest.js"
 pubDate: '2025-06-12'
 heroImage: './budget_buddy.svg'

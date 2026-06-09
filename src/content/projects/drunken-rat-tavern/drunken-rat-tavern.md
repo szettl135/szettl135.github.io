@@ -1,6 +1,7 @@
 ---
 title: "Print2Mobile | The Drunken Rat Tavern"
-tags: ["HTML", "CSS", "JS", "JQuery", "PHP", "MariaDB"]
+tags: ["Frontend", "Backend", "Design", "Web App"]
+technology: ["HTML", "CSS", "JS", "JQuery", "PHP", "MariaDB"]
 description: "Print2Mobile Project utilizing QR-codes which lead to a fantasy themed chat app"
 pubDate: '2024-10-16'
 heroImage: './drunken_rat_tavern_logo.png'

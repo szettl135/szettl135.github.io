@@ -1,6 +1,7 @@
 ---
 title: "TaskApp"
-tags: ["React Native", "CSS", "Expo"]
+tags: ["Frontend", "Backend", "Design", "Mobile App"]
+technology: ["React Native", "CSS", "Expo"]
 description: "Simple Task app in order to learn react natice and Expo"
 pubDate: '2025-03-02'
 heroImage: './banner.png'
