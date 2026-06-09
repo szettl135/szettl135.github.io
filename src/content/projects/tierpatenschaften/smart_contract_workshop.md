@@ -1,7 +1,7 @@
 ---
 title: "Digital Animal Sponsorships with NFTs (ERC-1155 Smart Contracts)"
 link: https://github.com/realJanWeiss/zoo-sponsorship
-tags: ["Frontend", "Backend", "Mobile App", "Web App"]
+tags: ["Frontend", "Backend", "Web App"]
 technology: ["Solidity", "Next.js", "Hardhat", "OpenZeppelin"]
 description: "Digital animal sponsorships with NFTs"
 pubDate: '2025-06-30'
