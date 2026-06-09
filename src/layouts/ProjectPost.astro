@@ -7,7 +7,7 @@ import BaseLayout from './BaseLayout.astro';
 
 type Props = CollectionEntry<'project'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, tags, link } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, technology, link } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>	
@@ -29,12 +29,19 @@ const { title, description, pubDate, updatedDate, heroImage, tags, link } = Astr
 				</div>
 				<h1>{title}</h1>
 				<div>
-						<p class="tag-row">
-							{tags.map((tag: string) => (
-									<span class="tag">{tag}</span>
-							))}
-						</p>
+					<p class="tag-row">
+						{tags.map((tag: string) => (
+								<span class="tag">{tag}</span>
+						))}
+					</p>
 				</div>
+				<div class="technology-row">
+					Technology:
+					{technology?.map((tech: string) => (
+						<span class="technology">{tech}</span>
+					))}
+				</div>
+
 					{
 						link && (
 							<a href={link}>{link}</a>
@@ -83,6 +90,36 @@ const { title, description, pubDate, updatedDate, heroImage, tags, link } = Astr
 		}
 		.last-updated-on {
 			font-style: italic;
+		}
+
+		.technology-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			justify-content: center;
+			margin-bottom: 1rem;
+		}
+
+		.technology {
+			/* padding: 0.35rem 0.75rem; */
+			/* border: 1px solid rgb(var(--gray-light)); */
+			border-radius: 999px;
+			/* font-size: 0.85rem; */
+			font-weight: 500;
+			background: transparent;
+			color: rgb(var(--gray-dark));
+		}
+
+		.technology:not(:last-child)::after {
+			content: ', ';
+		}
+		
+		
+
+		@media (max-width: 720px) {
+			.title {
+				font-size: medium;
+			}
 		}
 	</style>
 </BaseLayout>

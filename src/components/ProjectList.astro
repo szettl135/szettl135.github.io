@@ -16,7 +16,9 @@ const { projects, withTagData = false } = Astro.props;
     <li {...(withTagData ? { "data-tags": JSON.stringify(project.data.tags ?? []) } : {})}>
       <a href={`/projects/${project.id}/`}>
         {project.data.heroImage && (
-          <Image width={720} height={360} src={project.data.heroImage} alt="" />
+          	<div class="hero-wrapper">
+				<Image class="hero-image" src={project.data.heroImage} alt={project.data.description} />
+			</div>
         )}
         <h4 class="title">{project.data.title}</h4>
         <p class="date">
@@ -58,7 +60,8 @@ ul li:first-child .title {
 ul li img {
 	margin-bottom: 0.5rem;
 	border-radius: 12px;
-	object-fit: cover;
+	object-fit: contain;
+	background-color: var(--surface); /* füllt die Lücken */
 	aspect-ratio: 16/9;;
 }
 ul li a {
@@ -79,6 +82,17 @@ ul li a:hover .date {
 }
 ul a:hover img {
 	box-shadow: var(--box-shadow);
+}
+.hero-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* konsistentes Verhältnis für alle Karten */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 @media (max-width: 720px) {
 	ul {
