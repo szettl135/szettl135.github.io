@@ -21,7 +21,7 @@ My plan was then to use a real beer mug or coaster as the physical medium. This 
 I used simple HTML, CSS, JavaScript, and PHP for the implementation. I also used JQuery for the JavaScript and Tailwind for the CSS. JQuery was used for automatically reloading the messages. I also created a simple MySQL database that stores all sent messages. I focused primarily on the backend and the functions and kept the frontend rather simple. The project was hosted via the Campus Cloud and its PHP instance.
 
 | ![‘Login Screen’](login_screen.jpg) | ![‘Chat Screen’](chat_screen.jpg) | ![‘Example Chat’](chat_example.jpg) |
-| ------------------------------------ | ----------------------------------- - | ------------------------------------ |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
 Link to the website (no longer functional): https://it241501-20437.php.fhstp.cc/tavern/
 

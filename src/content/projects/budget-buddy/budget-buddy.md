@@ -23,7 +23,7 @@ There is a simple login form that prevents unauthorized users from viewing the d
 Once you are logged in, there is a tab bar on the main page with a profile page where you can simply log out again.
 
 | ![‘Login Screen’](login_screen.png) | ![‘Profile Screen’](profile_screen.png) |
-| --------------------------- --------- | ------------------------------------ |
+| ------------------------------------ | ------------------------------------ |
 
 #### Account view
 
@@ -32,7 +32,7 @@ The second tab on the tab bar is for the accounts to which you enter transaction
 As on the transaction page, you can add new accounts here, edit them by tapping on them, and delete them by swiping left. When you delete an account, all transactions on that account are also deleted. 
 
 | ![‘Accounts Screen’](accounts_screen.png) | ![‘New Account Screen’](new_account_screen.png) | ![‘Delete Account Action’](delete_account_action.png) |
-| ----------------------------------- - | ------------------------------------ | ------------------------------------ |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
 #### Transaction view
 
@@ -43,7 +43,7 @@ You can see whether money was withdrawn or deposited, as well as further informa
 On this page, you can also add new transactions using the floating button. Click on a transaction to edit it or drag a transaction to the left to delete it.
 
 | ![‘Transaction Screen’](transaction_screen.png) | ![‘Add Transaction Screen’](add_transaction_screen.png) | ![‘Delete Transaction Action’](delete_transaction_action.png) |
-| ------------------------------------ | ------------------------------------ | --------------------- --------------- |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
 ### Technologies
 
@@ -85,7 +85,7 @@ There is now a new tab called “Statistics” in the tab bar at the bottom. Thi
 Pie charts are used in the actual graphics view. These show the proportions of expenditure/income for a specific category in that month/year. When you hover over them, you can also see the exact amount for that category. In addition, there is a list view at the bottom with the categories and amounts, which are also sorted according to the percentages in the pie chart
 
 | ![‘Spendings Statistics Screen’](statistics_screen_spendings.png) | ![‘Spendings Statistics Screen 2’](statistics_screen_spendings2.png) | ![‘Earnings Statistics Screen’](statistics_screen_earnings.png) |
-| ------------------------- ----------- | ------------------------------------ | ------------------------------------ |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
 
 ### Technologies
 
