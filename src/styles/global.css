@@ -114,7 +114,7 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--text));
+	color: var(--text);
 	line-height: 1.2;
 }
 h1 {
@@ -165,7 +165,7 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: var(--gray-light);
 	border-radius: 2px;
 }
 pre {
@@ -183,7 +183,7 @@ blockquote {
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--primary-contrast));
+	border-top: 1px solid var(--primary-contrast);
 }
 
 .tag-row {
@@ -213,12 +213,21 @@ hr {
 
 @keyframes glow {
 	0%, 100% {
+		opacity: 0.2;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+/* @keyframes glow {
+	0%, 100% {
 		box-shadow: 0 0 5px var(--primary), 0 0 10px var(--focus);
 	}
 	50% {
 		box-shadow: 0 0 20px var(--primary), 0 0 30px var(--focus);
 	}
-}
+} */
 
 
 /* @keyframes glow {

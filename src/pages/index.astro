@@ -34,12 +34,35 @@ const projects = (await getCollection('project')).filter(
 	<ProjectList projects={projects} />
 
 	<style>
-		.introduction-container {
+		/* .introduction-container {
 			display: flex;
 			border: 2px var(--border) solid;
 			border-radius: 10px;
 			padding: 1em;
 			animation: glow 2s ease-in-out infinite;
+		} */
+
+		.introduction-container {
+			position: relative;
+			display: flex;
+			border: 2px solid var(--border);
+			border-radius: 10px;
+			padding: 1em;
+		}
+
+		.introduction-container::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			pointer-events: none;
+
+			box-shadow:
+				0 0 20px var(--primary),
+				0 0 30px var(--focus);
+
+			opacity: 0.2;
+			animation: glow 2.5s ease-in-out infinite;
 		}
 		
 		.text-container {
