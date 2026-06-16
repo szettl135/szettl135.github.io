@@ -63,8 +63,8 @@ Specific animals are displayed in a card view I created, along with information 
 
 If you want to adopt an animal, you first have to connect a crypto wallet, then you can confirm a transaction via the crypto wallet using the Adopt button. After a short wait, you will see that the animal has been adopted, and if you look in the wallet, you will see an NFT of the adopted animal along with a short description and a picture.
 
-![Appbild](./tierpatenschaften_04.png)
-![Appbild](./tierpatenschaften_05.png)
+| ![Appbild](./tierpatenschaften_04.png) | ![Appbild](./tierpatenschaften_05.png) |
+| - | - |
 
 ## Personal experiences and conclusion
 

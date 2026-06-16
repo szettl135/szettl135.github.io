@@ -10,7 +10,7 @@ featured: true
 
 ## First semester
 
-Part of the first semester in the Mobile Masterclass was to program your own project, which you were allowed to define yourself. I had recently become more familiar with finances and was therefore looking around for digital household accounts. After a little searching, however, I couldn't find any that made it easy to enter data on both mobile and desktop devices. After learning the multi-platform language [[21.11 Ionic|Ionic]] in class, I had the opportunity to create my own household account. Since creating a household budget book is a major undertaking, the initial focus was on implementing basic functions such as creating accounts and performing transactions on these accounts.
+Part of the first semester in the Mobile Masterclass was to program your own project, which you were allowed to define yourself. I had recently become more familiar with finances and was therefore looking around for digital household accounts. After a little searching, however, I couldn't find any that made it easy to enter data on both mobile and desktop devices. After learning the multi-platform language Ionic in class, I had the opportunity to create my own household account. Since creating a household budget book is a major undertaking, the initial focus was on implementing basic functions such as creating accounts and performing transactions on these accounts.
 
 ### Features
 

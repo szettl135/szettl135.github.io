@@ -8,7 +8,7 @@ heroImage: './musicguesser_hero.jpg'
 featured: false
 ---
 
-In the third semester of the Mobile Masterclass, we are free to choose how we want to earn our credits alongside the semester project. To earn my credits this semester, I created my own Kotlin project: a MusicGuesser. You can create quizzes using local MP3s and then guess the song title from a short snippet of the song in a quiz. 
+In the third semester of the Mobile Masterclass, we are free to choose how we want to earn our credits alongside the semester project. To earn my credits this semester, I created my own Kotlin project: a MusicGuesser. You can create quizzes using local MP3s and then guess the song title from a short snippet of the song in a quiz.
 
 ## Features
 

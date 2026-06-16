@@ -5,7 +5,7 @@ technology: ["HTML", "CSS", "JS", "JQuery", "PHP", "MariaDB"]
 description: "Print2Mobile Project utilizing QR-codes which lead to a fantasy themed chat app"
 pubDate: '2024-10-16'
 heroImage: './drunken_rat_tavern_logo.png'
-featured: true
+featured: false
 ---
 
 ## Project idea

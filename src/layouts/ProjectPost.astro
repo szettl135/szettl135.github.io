@@ -113,12 +113,82 @@ const { title, description, pubDate, updatedDate, heroImage, tags, technology, l
 		.technology:not(:last-child)::after {
 			content: ', ';
 		}
+
+		.prose :global(.video-wrapper) {
+			width: 100%;
+			overflow: hidden;
+		}
+		.prose :global(.video-wrapper video) {
+			width: 100%;
+			height: auto;
+		}
+
+		/* Für kleine Bilder allgemein */
+		.prose :global(.img-small) {
+			max-width: 400px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		/* Speziell für Handy-Hochformat-Screenshots */
+		.prose :global(.img-portrait) {
+			max-height: 600px;
+			width: auto;
+			display: block;
+			/* margin: 0 auto; */
+		}
+
+		.prose :global(figure) {
+			margin: 2em 0;
+			text-align: center;
+			display: block;
+		}
+
+		.prose :global(figure img) {
+			margin: 0 auto;
+			display: block;
+		}
+
+		.prose :global(figcaption) {
+			margin-top: 0.5em;
+			font-size: 0.85em;
+			color: var(--text-muted);
+			font-style: italic;
+			display: block;
+		}
+
+		/* Kombination: kleines Bild mit Caption */
+		.prose :global(figure.img-portrait img) {
+			max-height: 600px;
+			width: auto;
+		}
+
+		.prose :global(.img-row) {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		.prose :global(.img-row img) {
+			flex: 1;              /* statt fixer width */
+    min-width: 0;
+			/* width: 48%; */
+			object-fit: contain;
+			border-radius: 8px;
+		}
 		
 		
 
 		@media (max-width: 720px) {
 			.title {
 				font-size: medium;
+			}
+			.prose :global(.img-row) {
+				flex-direction: column;
+			}
+
+			.prose :global(.img-row img) {
+				width: 100%;
 			}
 		}
 	</style>
