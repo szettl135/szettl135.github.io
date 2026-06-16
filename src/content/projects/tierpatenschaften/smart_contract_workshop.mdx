@@ -9,6 +9,8 @@ heroImage: './tierpatenschaften_01.png'
 featured: false
 ---
 
+import { Image } from 'astro:assets';
+
 ## Einleitung
 
 The aim of the project was to map the adoption process of a zoo using blockchain technology. This would enable visitors to easily become sponsors of an animal, and their sponsorship would be stored on the blockchain, making this certificate immutable and permanently visible to everyone. The project was carried out during the 2025 Summer School at the St. Pölten University of Applied Sciences (Now USTP) as part of the workshop "Smart Contracts: Token creation with ERC20" ([https://creativemediasummer.fhstp.ac.at/workshops/smart-contracts-token-creation-with-erc20](https://creativemediasummer.fhstp.ac.at/workshops/smart-contracts-token-creation-with-erc20)). After learning about blockchain and smart contracts, we were able to choose our own project for the week and develop it within the remaining one and a half days.
@@ -33,7 +35,7 @@ Basic functions include that the owner of the contract, in this case the zoo its
 
 Furthermore, the IPFS (InterPlanetary File System) was also used. This is a decentralized location for storing files such as images or JSONs. We used Pinata, an IPFS storage provider, for this purpose. In Pinata, we stored the images for the animal NFTs plus JSONs with some information about the animals. When a person adopts an animal, an NFT of it ends up in their wallet and the image, plus the information in the JSON, is retrieved from Pinata and displayed in the adopter's crypto wallet.
 
-![Appbild](./tierpatenschaften_06.png)
+![View of our smart contract files](./tierpatenschaften_06.png)
 
 ### Backend
 
@@ -51,20 +53,27 @@ I used Wagmi.js for the connection. It is a React Hook library that makes it eas
 
 The basic functions of our frontend include a main page showing all animals plus detail pages for each animal species. The main page provides a clear overview of all animals. The header features the logo of the “Happy Paws Zoo” as well as a login button that can be used to connect a crypto wallet.
 
-![Appbild](./tierpatenschaften_01.png)
+![Main screen of the zoo](./tierpatenschaften_01.png)
 
 As soon as you click on an animal, you are taken to a detailed page with various information about that animal, just as you would find in a real zoo. Further down in the description, you then have the option of becoming a sponsor for the various animals.
 
-![Appbild](./tierpatenschaften_02.png)
+![Page for kangaroos](./tierpatenschaften_02.png)
 
 Specific animals are displayed in a card view I created, along with information on how many sponsorships are still available and whether the animal has already been adopted or is still available for adoption.
 
-![Appbild](./tierpatenschaften_03.png)
+![Animal description and sponsorships](./tierpatenschaften_03.png)
 
 If you want to adopt an animal, you first have to connect a crypto wallet, then you can confirm a transaction via the crypto wallet using the Adopt button. After a short wait, you will see that the animal has been adopted, and if you look in the wallet, you will see an NFT of the adopted animal along with a short description and a picture.
 
-| ![Appbild](./tierpatenschaften_04.png) | ![Appbild](./tierpatenschaften_05.png) |
-| - | - |
+import tierpatenschaften_04 from './tierpatenschaften_04.png';
+import tierpatenschaften_05 from './tierpatenschaften_05.png';
+
+<figure>
+  <div class="img-row">
+    <Image src={tierpatenschaften_04} alt="Kangaroo nft inside wallet" />
+    <Image src={tierpatenschaften_05} alt="Kangaroo nft detail view" />
+  </div>
+</figure>
 
 ## Personal experiences and conclusion
 

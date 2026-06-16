@@ -132,10 +132,10 @@ const { title, description, pubDate, updatedDate, heroImage, tags, technology, l
 
 		/* Speziell für Handy-Hochformat-Screenshots */
 		.prose :global(.img-portrait) {
-			max-height: 600px;
+			/* max-height: 600px; */
 			width: auto;
 			display: block;
-			/* margin: 0 auto; */
+			/* margin: auto auto; */
 		}
 
 		.prose :global(figure) {
@@ -170,8 +170,8 @@ const { title, description, pubDate, updatedDate, heroImage, tags, technology, l
 		}
 
 		.prose :global(.img-row img) {
-			flex: 1;              /* statt fixer width */
-    min-width: 0;
+			flex: 1;
+    		min-width: 0;
 			/* width: 48%; */
 			object-fit: contain;
 			border-radius: 8px;

@@ -21,7 +21,7 @@ I decided to implement an undo function. The aim of the function was to allow us
 
 The easyBiograph already had comprehensive functions when I joined this project and started working on it. You can create a biography for a person and enter events on various event axes, which you can also create yourself. You can also zoom in and adjust various settings. For example, you can change the color scheme of the interface or switch between German and English. The biography can also be printed out.
 
-![App image](./easybiograph_01.png)
+![Main screen](./easybiograph_01.png)
 
 easyBiograph is written in Vue.js, and the undo history specifically uses the so-called Vuex Store. This is a Vue.js library for state management. I didn't have to develop an undo and redo system from scratch, as there was already one in the easyNWK research project that I could use as a guide. There was also already a basic system for the undo history in easyBiograph, which was based on these repositories (https://github.com/anthonygore/vuex-undo-redo and https://easynwk.fhstp.ac.at/). Basically, every state change (e.g., a new event, changes to settings, etc.) is executed as a translation and stored as a list so that the action can be undone or restored using this list. 
 
@@ -33,8 +33,8 @@ I had to come up with a solution that would allow me to still have the transacti
 
 Once one of these actions was performed, I saved the transaction list in localStorage and retrieved it immediately after loading so that all transactions were retained. However, this only happens with these specific setting changes and not when you leave the page normally, as the normal expectation is that the undo history will be retained as long as you are working.
 
-![App image](./easybiograph_02.png)
-![App image](./easybiograph_03.png)
+![Main screen with undo and redo button in yellow](./easybiograph_02.png)
+![Main screen changed back onto blue](./easybiograph_03.png)
 
 Once I had finished and tested everything, I created a merge request in the repository so that Dipl.-Ing. Mag. Alexander Rind could also view and review my changes. After I made a few more changes he requested, he was very satisfied with my changes and approved them.
 

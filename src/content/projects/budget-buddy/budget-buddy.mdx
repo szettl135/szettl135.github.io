@@ -8,6 +8,8 @@ heroImage: './budget_buddy.svg'
 featured: true
 ---
 
+import { Image } from 'astro:assets';
+
 ## First semester
 
 Part of the first semester in the Mobile Masterclass was to program your own project, which you were allowed to define yourself. I had recently become more familiar with finances and was therefore looking around for digital household accounts. After a little searching, however, I couldn't find any that made it easy to enter data on both mobile and desktop devices. After learning the multi-platform language Ionic in class, I had the opportunity to create my own household account. Since creating a household budget book is a major undertaking, the initial focus was on implementing basic functions such as creating accounts and performing transactions on these accounts.
@@ -22,8 +24,15 @@ There is a simple login form that prevents unauthorized users from viewing the d
 
 Once you are logged in, there is a tab bar on the main page with a profile page where you can simply log out again.
 
-| ![‘Login Screen’](login_screen.png) | ![‘Profile Screen’](profile_screen.png) |
-| ------------------------------------ | ------------------------------------ |
+import login_screen from './login_screen.png';
+import profile_screen from './profile_screen.png';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={login_screen} alt="Login Screen" />
+    <Image src={profile_screen} alt="Profile Screen" />
+  </div>
+</figure>
 
 #### Account view
 
@@ -31,8 +40,17 @@ The second tab on the tab bar is for the accounts to which you enter transaction
 
 As on the transaction page, you can add new accounts here, edit them by tapping on them, and delete them by swiping left. When you delete an account, all transactions on that account are also deleted. 
 
-| ![‘Accounts Screen’](accounts_screen.png) | ![‘New Account Screen’](new_account_screen.png) | ![‘Delete Account Action’](delete_account_action.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+import accounts_screen from './accounts_screen.png';
+import new_account_screen from './new_account_screen.png';
+import delete_account_action from './delete_account_action.png';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={accounts_screen} alt="Accounts Screen" />
+    <Image src={new_account_screen} alt="New Account Screen" />
+    <Image src={delete_account_action} alt="Delete Account Action" />
+  </div>
+</figure>
 
 #### Transaction view
 
@@ -42,8 +60,17 @@ You can see whether money was withdrawn or deposited, as well as further informa
 
 On this page, you can also add new transactions using the floating button. Click on a transaction to edit it or drag a transaction to the left to delete it.
 
-| ![‘Transaction Screen’](transaction_screen.png) | ![‘Add Transaction Screen’](add_transaction_screen.png) | ![‘Delete Transaction Action’](delete_transaction_action.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+import transaction_screen from './transaction_screen.png';
+import add_transaction_screen from './add_transaction_screen.png';
+import delete_transaction_action from './delete_transaction_action.png';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={transaction_screen} alt="Transaction Screen" />
+    <Image src={add_transaction_screen} alt="Add Transaction Screen" />
+    <Image src={delete_transaction_action} alt="Delete Transaction Action" />
+  </div>
+</figure>
 
 ### Technologies
 
@@ -75,8 +102,15 @@ It was already possible to log in before. However, this was only possible via a 
 
 As with the login, successful registration takes you to the transaction view. Each user also receives a default account called “Bank Account” at the beginning so that they can start adding transactions right away. I have also made the profile page a little nicer. There is a default user image and you can see the email address of the logged-in user.
 
-| ![‘Register Screen’](register_screen.png) | ![‘New Profile Screen’](profile_screen_2.png) |
-| ------------------------------------ | ------------------------------------ |
+import register_screen from './register_screen.png';
+import profile_screen_2 from './profile_screen_2.png';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={register_screen} alt="Register Screen" />
+    <Image src={profile_screen_2} alt="New Profile Screen" />
+  </div>
+</figure>
 
 #### Graph view
 
@@ -84,8 +118,17 @@ There is now a new tab called “Statistics” in the tab bar at the bottom. Thi
 
 Pie charts are used in the actual graphics view. These show the proportions of expenditure/income for a specific category in that month/year. When you hover over them, you can also see the exact amount for that category. In addition, there is a list view at the bottom with the categories and amounts, which are also sorted according to the percentages in the pie chart
 
-| ![‘Spendings Statistics Screen’](statistics_screen_spendings.png) | ![‘Spendings Statistics Screen 2’](statistics_screen_spendings2.png) | ![‘Earnings Statistics Screen’](statistics_screen_earnings.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+import statistics_screen_spendings from './statistics_screen_spendings.png';
+import statistics_screen_spendings2 from './statistics_screen_spendings2.png';
+import statistics_screen_earnings from './statistics_screen_earnings.png';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={statistics_screen_spendings} alt="Spendings Statistics Screen" />
+    <Image src={statistics_screen_spendings2} alt="Spendings Statistics Screen 2" />
+    <Image src={statistics_screen_earnings} alt="Earnings Statistics Screen" />
+  </div>
+</figure>
 
 ### Technologies
 

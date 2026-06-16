@@ -8,6 +8,8 @@ heroImage: './musicguesser_hero.jpg'
 featured: false
 ---
 
+import { Image } from 'astro:assets';
+
 In the third semester of the Mobile Masterclass, we are free to choose how we want to earn our credits alongside the semester project. To earn my credits this semester, I created my own Kotlin project: a MusicGuesser. You can create quizzes using local MP3s and then guess the song title from a short snippet of the song in a quiz.
 
 ## Features
@@ -16,22 +18,39 @@ In the third semester of the Mobile Masterclass, we are free to choose how we wa
 
 When you launch the app, you can select a folder containing local music. You are then taken to the main screen. Using the FloatingActionButton, you can create a new quiz. You can give it a name and select song titles using chosen search terms to add them to the quiz. You can then view the quiz in the list, along with information such as the name, the number of songs and your current ranking in each mode.
 
-| ![MusicGuesser Main Screen](./guesser_mainscreen.jpg) | ![MusicGuesser Add Screen](./guesser_addscreen.jpg) |
-| ------------------------------------------------ | ------------------------------------------------ |
+import guesser_mainscreen from './guesser_mainscreen.jpg';
+import guesser_addscreen from './guesser_addscreen.jpg';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={guesser_mainscreen} alt="MusicGuesser Main Screen" />
+    <Image src={guesser_addscreen} alt="MusicGuesser Add Screen" />
+  </div>
+</figure>
 
 ### Start the quiz
 
 When you tap on a quiz, you’ll be taken to the quiz’s start screen. There, you can select the mode – Random or Progression – along with the difficulty level. The mode determines how you can navigate through the songs. In Random mode, you can jump back and forth between each song. In Progression mode, you must guess the current song before you can move on. The difficulty level determines how long the song snippet is; the higher the difficulty, the shorter the snippet becomes.
 
-| ![MusicGuesser Song Screen](./guesser_songscreen.jpg) |
-|:-------------------------------------------------------:|
+import guesser_songscreen from './guesser_songscreen.jpg';
+
+<figure class="img-portrait">
+    <Image src={guesser_songscreen} alt="MusicGuesser Song Screen" />
+</figure>
 
 ### Playing the quiz
 
 When playing, you’ll see the player at the top, which you can use to play the clip. Below that are the navigation controls: buttons for skipping forwards and backwards, and in Random game mode, dot indicators showing which song you’re on, which you can also use to navigate. Once you’ve finished a song, you’ll be taken to the results screen. There, you receive a medal if you guessed all the songs correctly. If you complete the song on a higher difficulty level, you also receive a better medal. Finally, you can see which guesses you made for each song and whether they were correct.
 
-| ![MusicGuesser Game Screen](./guesser_gamescreen.jpg) | ![MusicGuesser Result Screen](./guesser_resultscreen.jpg) |
-| ------------------------------------------------ | ------------------------------------------------ |
+import guesser_gamescreen from './guesser_gamescreen.jpg';
+import guesser_resultscreen from './guesser_resultscreen.jpg';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={guesser_gamescreen} alt="MusicGuesser Game Screen" />
+    <Image src={guesser_resultscreen} alt="MusicGuesser Result Screen" />
+  </div>
+</figure>
 
 ## Technologies
 

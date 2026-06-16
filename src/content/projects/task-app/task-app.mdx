@@ -8,6 +8,8 @@ heroImage: './banner.png'
 featured: false
 ---
 
+import { Image } from 'astro:assets';
+
 For extra points, I also wrote a digital household budget book in Ionic with a NestJs backend alongside my main project. The main goal here was to learn how to use React Native, as I had never used it before. To learn how to use it, I created a simple task list app where you can create, edit, and delete tasks, and everything is stored in local storage.
 
 ## Features
@@ -16,18 +18,40 @@ Since the purpose of this project was more to learn React Native, the app's feat
 
 The list also allows you to mark the task as completed or undo this, and also to delete the task.
 
-| ![Task App Main Screen](./main_screen.png) | ![Task App Main Screen after checking task](./main_screen_check.png) | ![Task App Main Screen after deleting task](./main_screen_delete.png) |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+import main_screen from './main_screen.png';
+import main_screen_check from './main_screen_check.png';
+import main_screen_delete from './main_screen_delete.png';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={main_screen} alt="Task App Main Screen" />
+    <Image src={main_screen_check} alt="Task App Main Screen after checking task" />
+    <Image src={main_screen_delete} alt="Task App Main Screen after deleting task" />
+  </div>
+</figure>
 
 The main window also features a floating button that allows you to add new tasks. You can enter the title, an optional description, and the due date of the task. 
 
-| ![Task App add task screen](./add_task.png) | ![Task App add task screen showing date selection](./add_task_select_date.png) |
-| ------------------------------------ | ------------------------------------ |
+import add_task from './add_task.png';
+import add_task_select_date from './add_task_select_date.png';
 
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={add_task} alt="Task App add task screen" />
+    <Image src={add_task_select_date} alt="Task App add task screen showing date selection" />
+  </div>
+</figure>
 You can also click on a task in the list to go to a details page where you can view all the information about the task, including the description. As in the list, you can also check the checkbox here, and there are two buttons, one for deleting and one for editing the task, where you can change all the information.
 
-| ![Task App task detail screen](./task_detail_screen.png) | ![Task App task edit screen](./task_edit_screen.png) |
-| ------------------------------------ | ------------------------------------ |
+import task_detail_screen from './task_detail_screen.png';
+import task_edit_screen from './task_edit_screen.png';
+
+<figure class="img-portrait">
+  <div class="img-row">
+    <Image src={task_detail_screen} alt="Task App task detail screen" />
+    <Image src={task_edit_screen} alt="Task App task edit screen" />
+  </div>
+</figure>
 
 ## Technologies
 
