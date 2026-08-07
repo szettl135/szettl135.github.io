@@ -1,7 +1,7 @@
 ---
 name: Tailwind CSS
-category: Frontend
+category: Framework
 icon: '../icons/tailwind.svg'
 url: https://tailwindcss.com/
-order: 21
+order: 50
 ---

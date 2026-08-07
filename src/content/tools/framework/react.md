@@ -1,7 +1,7 @@
 ---
 name: React
-category: Frontend
+category: Framework
 icon: '../icons/react.svg'
 url: https://react.dev
-order: 50
+order: 30
 ---

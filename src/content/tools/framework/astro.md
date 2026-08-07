@@ -1,6 +1,6 @@
 ---
 name: Astro
-category: Frontend
+category: Framework
 icon: '../icons/astro.svg'
 url: https://astro.build
 order: 60

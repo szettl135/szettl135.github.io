@@ -1,7 +1,7 @@
 ---
 name: CSS
-category: Frontend
+category: Language
 icon: '../icons/css.svg'
 url: https://developer.mozilla.org/en-US/docs/Web/CSS
-order: 20
+order: 60
 ---

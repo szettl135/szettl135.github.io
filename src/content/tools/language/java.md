@@ -1,7 +1,7 @@
 ---
 name: Java
-category: Backend
+category: Language
 icon: '../icons/java.svg'
 url: https://www.java.com/en/
-order: 20
+order: 10
 ---

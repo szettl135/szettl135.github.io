@@ -25,7 +25,7 @@ const tools = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			name: z.string(),
-			category: z.enum(["Frontend", "Backend", "Others"]),
+			category: z.enum(["Language", "Framework", "Backend", "Others"]),
 			icon: image(),
 			url: z.string().url().optional(),
 			order: z.number().optional(),

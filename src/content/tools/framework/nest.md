@@ -1,6 +1,6 @@
 ---
 name: Nest.js
-category: Backend
+category: Framework
 icon: '../icons/nest.svg'
 url: https://nestjs.com/
 order: 40

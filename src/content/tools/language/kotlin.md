@@ -1,7 +1,7 @@
 ---
 name: Kotlin
-category: Backend
+category: Language
 icon: '../icons/kotlin.svg'
 url: https://kotlinlang.org/
-order: 60
+order: 30
 ---

@@ -1,7 +1,7 @@
 ---
 name: TypeScript
-category: Frontend
+category: Language
 icon: '../icons/typescript.svg'
 url: https://www.typescriptlang.org/
-order: 40
+order: 22
 ---

@@ -1,7 +1,7 @@
 ---
 name: JavaScript
-category: Frontend
+category: Language
 icon: '../icons/js.svg'
 url: https://www.javascript.com/
-order: 20
+order: 21
 ---

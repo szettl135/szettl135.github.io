@@ -1,7 +1,7 @@
 ---
 name: Ionic
-category: Frontend
+category: Framework
 icon: '../icons/ionic.svg'
 url: https://ionicframework.com/
-order: 72
+order: 20
 ---

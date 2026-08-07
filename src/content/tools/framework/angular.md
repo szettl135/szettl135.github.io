@@ -1,7 +1,7 @@
 ---
 name: Angular
-category: Frontend
+category: Framework
 icon: '../icons/angular.svg'
 url: https://angular.dev/
-order: 71
+order: 10
 ---

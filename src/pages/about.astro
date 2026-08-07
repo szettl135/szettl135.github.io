@@ -43,13 +43,19 @@ const items = await getCollection("journey");
 	<div>
 		<h2>Acquired skills</h2>
 
-		<h4>Frontend</h4>
+		<h4>Languages</h4>
 		<div class="tool-conatiner">
-			<ToolGrid tools={tools} category="Frontend" />
+			<ToolGrid tools={tools} category="Language" />
+
+		</div>
+
+		<h4>Frameworks & Libraries</h4>
+		<div class="tool-conatiner">
+			<ToolGrid tools={tools} category="Framework" />
 
 		</div>
 		
-		<h4>Backend</h4>
+		<h4>Backend & Databases</h4>
 			<ToolGrid tools={tools} category="Backend" />
 		
 		<h4>Tools and Others</h4>

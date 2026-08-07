@@ -1,7 +1,7 @@
 ---
 name: HTML
-category: Frontend
+category: Language
 icon: '../icons/html.svg'
 url: https://developer.mozilla.org/en-US/docs/Glossary/HTML5
-order: 10
+order: 50
 ---
