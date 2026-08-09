@@ -16,10 +16,9 @@ At the beginning of the second semester of the Master’s program in Interactive
 
 ## Task Description
 
-The task description and the MVP were largely predetermined, though we were able to have a say, particularly regarding the optional additional features. The basic idea was to develop an app that allows users to share certain real-time data—such as location, speed, heart rate, etc.—with a group. There are several potential areas of application.  For example, one could focus on sports (running, cycling, etc.) or on health (including fall detection). Ultimately, we decided on the “running against each other” category.
+The task description and the MVP were largely predetermined, though we were able to have a say, particularly regarding the optional additional features. The basic idea was to develop an app that allows users to share certain real-time data — such as location, speed, heart rate, etc. — with a group. There are several potential areas of application. For example, one could focus on sports (running, cycling, etc.) or on health (including fall detection). Ultimately, we decided on the “running against each other” category.
 
 ### MVP (Minimum Viable Product)
-
 
 To be able to say in the end that we had mastered the task, we defined an MVP (Minimum Viable Product) with the most basic functions. As far as the client was concerned, the key priorities were reading and meaningfully transmitting sensor data, login and team formation, as well as a “cool presentation.” Especially regarding the last point, we really needed to think about what works well in context, rather than simply displaying all the data as numbers.
 On the server side, the focus was on distributing the data in real time within the team.
@@ -27,7 +26,7 @@ In addition, the app was to be available natively on at least one platform in te
 
 ### NTH (Nice to Have)
 
-In addition to the MVP, optional features—referred to as “Nice to Haves”—were also noted, which would then be implemented once the MVP was complete. This list was expanded throughout the week.
+In addition to the MVP, optional features—referred to as “Nice to Haves” — were also noted, which would then be implemented once the MVP was complete. This list was expanded throughout the week.
 These included distribution on both platforms (iOS and Android) and the introduction of a handicap system that would allow people of varying skill levels to compete against each other in a sport. A history of past sessions, the ability to export data, gamification, the app running in the background, micro-interactions, and vibration were also items on this list. Other ideas included calculating a performance score, tests, or using a QR code for group formation.
 
 ## Technologies Used
@@ -37,8 +36,8 @@ For this project, we relied on technologies that we had already been introduced 
 import tech_stack_diagram from './tech_stack_diagram.jpg';
 
 <figure>
-  <Image src={tech_stack_diagram} alt="Diagramm of our Tech Stack" />
-  <figcaption>Interaction between the technologies and infrastructure used</figcaption>
+ <Image src={tech_stack_diagram} alt="Diagramm of our Tech Stack" />
+ <figcaption>Interaction between the technologies and infrastructure used</figcaption>
 </figure>
 
 ### Frontend
@@ -60,8 +59,8 @@ For data persistence, we relied on a PostgreSQL database, supplemented by the ob
 import er_modell from './ER-Modell-Komplett.drawio-1.png';
 
 <figure>
-  <Image src={er_modell} alt="ER diagram of the movemates DB" />
-  <figcaption>ER diagram of the movemates DB</figcaption>
+ <Image src={er_modell} alt="ER diagram of the movemates DB" />
+ <figcaption>ER diagram of the movemates DB</figcaption>
 </figure>
 
 The structure of our database is illustrated in this ER diagram. The core entities are User, Session, and Measurement Values. Between :
@@ -81,7 +80,7 @@ To avoid having to list all backend objects twice in our frontend and to save ti
 
 ### CI/CD
 
-A server on our FH Cloud was made available to us for our backend application. Did we upload our NestJS application to this server via FTP? Of course not! Did we instead invest a lot of time in continuous integration and deployment (CI/CD)? Absolutely! On the very first day of the week, we wrote a `docker-compose.yml` file. This allowed us to start the backend application with a Postgres database. With the support of our master class instructor Armin, we installed Docker on our server on the morning of the second day. Then we set up a GitLab Runner with the Shell Executor and wrote the .gitlab-ci.yml file. In it, we defined a deploy job that runs docker-compose whenever there’s a commit to the “main” branch, thereby launching the latest version of the application on our server.  We also automated the build of our Android app. This required a job to install the Ionic app’s dependencies, a job to build the frontend application, a job to build the .apk, and finally a job to publish the .apk. To ensure reproducible builds and a clean server, we wanted to run all these jobs in containers. To do this, we had to set up another GitLab Runner, this time using the Docker Executor.
+A server on our FH Cloud was made available to us for our backend application. Did we upload our NestJS application to this server via FTP? Of course not! Did we instead invest a lot of time in continuous integration and deployment (CI/CD)? Absolutely! On the very first day of the week, we wrote a `docker-compose.yml` file. This allowed us to start the backend application with a Postgres database. With the support of our master class instructor Armin, we installed Docker on our server on the morning of the second day. Then we set up a GitLab Runner with the Shell Executor and wrote the .gitlab-ci.yml file. In it, we defined a deploy job that runs docker-compose whenever there’s a commit to the “main” branch, thereby launching the latest version of the application on our server. We also automated the build of our Android app. This required a job to install the Ionic app’s dependencies, a job to build the frontend application, a job to build the .apk, and finally a job to publish the .apk. To ensure reproducible builds and a clean server, we wanted to run all these jobs in containers. To do this, we had to set up another GitLab Runner, this time using the Docker Executor.
 The Android app build uses the alvrme/alpine-android image, and the others use a simple Node.js image. Continuous deployment was implemented, and continuous integration followed.
 
 When you start a new NestJS project, [Eslint](https://eslint.org/), [Prettier](https://prettier.io/), and [Jest](https://jestjs.io/) are automatically set up. To ensure that code linting/formatting and testing are also executed in the pipeline, we created a separate job for each in a “test” step within our pipeline. Upstream, there is a job that installs the dependencies. All three jobs run in a Node.js image. If we’d had more time, we would have created a linting and testing job for the frontend as well.
@@ -89,8 +88,8 @@ When you start a new NestJS project, [Eslint](https://eslint.org/), [Prettier](h
 import pipeline1 from './image2.png';
 
 <figure>
-  <Image src={pipeline1} alt="Visualization of our GitLab CI/CD pipeline" />
-  <figcaption>Visualization of our GitLab CI/CD pipeline</figcaption>
+ <Image src={pipeline1} alt="Visualization of our GitLab CI/CD pipeline" />
+ <figcaption>Visualization of our GitLab CI/CD pipeline</figcaption>
 </figure>
 
 
@@ -99,8 +98,8 @@ As far as CI was concerned, the foundation for unit tests in the backend had bee
 import pipeline2 from './image3.png';
 
 <figure>
-  <Image src={pipeline2} alt="Pipeline completed successfully" />
-  <figcaption>Pipeline completed successfully (32 minutes!)</figcaption>
+ <Image src={pipeline2} alt="Pipeline completed successfully" />
+ <figcaption>Pipeline completed successfully (32 minutes!)</figcaption>
 </figure>
 
 #### Internal App Publishing
@@ -114,8 +113,8 @@ In terms of sensors, we were equipped with various heart rate monitors (HRMs) su
 import hrm from './hrm.jpeg';
 
 <figure class="img-small">
-  <Image src={hrm} alt="One of the heart rate sensors used" />
-  <figcaption>Example: One of the heart rate sensors used</figcaption>
+ <Image src={hrm} alt="One of the heart rate sensors used" />
+ <figcaption>Example: One of the heart rate sensors used</figcaption>
 </figure>
 
 ## Workflow
@@ -126,11 +125,11 @@ import standup1 from './standup1.jpg';
 import standup2 from './standup2_2.jpg';
 
 <figure>
-  <div class="img-row">
-    <Image src={standup1} alt="Us standing around for our Daily Standup" />
-    <Image src={standup2} alt="One of our daily plans" />
-  </div>
-  <figcaption>Daily Standup: Setting Goals for the Workday</figcaption>
+ <div class="img-row">
+  <Image src={standup1} alt="Us standing around for our Daily Standup" />
+  <Image src={standup2} alt="One of our daily plans" />
+ </div>
+ <figcaption>Daily Standup: Setting Goals for the Workday</figcaption>
 </figure>
 
 The goal for the first day was to create a monorepo on GitLab and initialize the project. On the front end, we worked on the first sensors, and on the back end, we set up the database and started working on the WebSockets. We also set up Firebase App Distribution for the Android platform.
@@ -149,11 +148,11 @@ import imfix_1 from './imfix_1.jpg';
 import imfix_2 from './imfix_2-2.jpeg';
 
 <figure>
-  <div class="img-row">
-    <Image src={imfix_1} alt="IMFix Food and games" />
-    <Image src={imfix_2} alt="IMFix virtual driving with a drink in hand" />
-  </div>
-  <figcaption>A quick breather at the IMFix event – for once, the slogan “Don’t drink and drive” wasn’t taken entirely seriously here.</figcaption>
+ <div class="img-row">
+  <Image src={imfix_1} alt="IMFix Food and games" />
+  <Image src={imfix_2} alt="IMFix virtual driving with a drink in hand" />
+ </div>
+ <figcaption>A quick breather at the IMFix event – for once, the slogan “Don’t drink and drive” wasn’t taken entirely seriously here.</figcaption>
 </figure>
 
 ## Final product delivered
@@ -184,8 +183,8 @@ When joining a session, you must first enter the session ID—which you received
 import dashboard from './dashboard.png';
 
 <figure class="img-portrait">
-  <Image src={dashboard} alt="Dashboard" />
-  <figcaption>Screenshot: Dashboard</figcaption>
+ <Image src={dashboard} alt="Dashboard" />
+ <figcaption>Screenshot: Dashboard</figcaption>
 </figure>
 
 
@@ -198,8 +197,8 @@ Users can leave the session at any time by clicking the “Log Out” button. Do
 import waitingscreen from './waitingscreen.jpg';
 
 <figure class="img-portrait">
-  <Image src={waitingscreen} alt="WaitingScreen" />
-  <figcaption>Screenshot: WaitingScreen</figcaption>
+ <Image src={waitingscreen} alt="WaitingScreen" />
+ <figcaption>Screenshot: WaitingScreen</figcaption>
 </figure>
 
 ### QR Modal
@@ -210,7 +209,7 @@ As soon as the host of a session clicks “Start,” all users in the session ap
 
 ### Leaderboard
 
-At the top of the screen, the user will find the ranking display. The user’s own rank is displayed quite large so that they can immediately see where they stand on the leaderboard. Right below that is the most important feature of our app: the visual display of heart rate and speed. We divide heart rate into 3 zones. The middle zone represents the “ideal” heart rate for the user for the current activity. As soon as you’re in the left or right zone, it means  that your heart rate is too low or too high, respectively. The “ideal  heart rate” is calculated based on the user’s age,  to ensure fairness among participants of different ages. We chose a bar chart for the visual representation because it allowed us to color-code the three zones and let the active heart rate move back and forth along the bar. The bars also display the number of points earned based on which zone the user is in. The point system for heart rate was designed so that only the middle zone—Zone 2—earns the most points (+5 points). The other two zones each earn +2 points. Thus, the user is credited with points every 3 seconds, depending on the zone. 
+At the top of the screen, the user will find the ranking display. The user’s own rank is displayed quite large so that they can immediately see where they stand on the leaderboard. Right below that is the most important feature of our app: the visual display of heart rate and speed. We divide heart rate into 3 zones. The middle zone represents the “ideal” heart rate for the user for the current activity. As soon as you’re in the left or right zone, it means that your heart rate is too low or too high, respectively. The “ideal heart rate” is calculated based on the user’s age, to ensure fairness among participants of different ages. We chose a bar chart for the visual representation because it allowed us to color-code the three zones and let the active heart rate move back and forth along the bar. The bars also display the number of points earned based on which zone the user is in. The point system for heart rate was designed so that only the middle zone—Zone 2—earns the most points (+5 points). The other two zones each earn +2 points. Thus, the user is credited with points every 3 seconds, depending on the zone. 
 
 Below the heart rate bar is the speed bar, which works on the same principle. Depending on your speed, the points move upward—the faster you go, the more points you earn. Here, too, the bar is divided into several zones, each marked by a different color.
 
@@ -219,19 +218,19 @@ Below the two bars is the leaderboard. It displays all participants and their sc
 import leaderboard from './leaderboard.jpg';
 
 <figure class="img-portrait">
-  <Image src={leaderboard} alt="Leaderboard" />
-  <figcaption>Screenshot: Leaderboard</figcaption>
+ <Image src={leaderboard} alt="Leaderboard" />
+ <figcaption>Screenshot: Leaderboard</figcaption>
 </figure>
 
 ### Map View
 
-This page features a “Leaflet” map displayed in  full-screen mode. It allows users to  actively track all participants on the map at any time,  for example, if a user is located in a different city. All participants are represented by a triangle in a unique color. We chose triangles because they allow us to indicate the direction in which a user is moving. Due to time constraints, this was the only feature our map offered.
+This page features a “Leaflet” map displayed in full-screen mode. It allows users to actively track all participants on the map at any time, for example, if a user is located in a different city. All participants are represented by a triangle in a unique color. We chose triangles because they allow us to indicate the direction in which a user is moving. Due to time constraints, this was the only feature our map offered.
 
 import map from './map.jpg';
 
 <figure class="img-portrait">
-  <Image src={map} alt="Map View" />
-  <figcaption>Screenshot: Map View</figcaption>
+ <Image src={map} alt="Map View" />
+ <figcaption>Screenshot: Map View</figcaption>
 </figure>
 
 ### User Profile
@@ -255,12 +254,12 @@ import demo2 from './demo2.jpg';
 import demo3 from './demo3.jpg';
 
 <figure>
-  <div class="img-row">
-    <Image src={demo1} alt="Us standing around setting up the live demo" />
-    <Image src={demo2} alt="Us running for the live demo" />
-    <Image src={demo3} alt="Leaderboard of the live demo" />
-  </div>
-  <figcaption>Interactive Live Demo at the St. Pölten University of Applied Sciences Parking Lot</figcaption>
+ <div class="img-row">
+  <Image src={demo1} alt="Us standing around setting up the live demo" />
+  <Image src={demo2} alt="Us running for the live demo" />
+  <Image src={demo3} alt="Leaderboard of the live demo" />
+ </div>
+ <figcaption>Interactive Live Demo at the St. Pölten University of Applied Sciences Parking Lot</figcaption>
 </figure>
 
 ### Feedback Received: Room for Improvement
@@ -272,9 +271,9 @@ During the interactive live demo and following the presentation, we received the
 - If both the heart rate and GPS data are zero, that person’s visual bar disappears from the leaderboard.
 - The code that must be entered to join a session should be shorter. Additionally, a built-in QR code reader would be cool. (We actually planned to include this, but unfortunately didn’t quite have enough time.)
 - It would be good to be able to see during the session…
-  - …how accurate the data is (e.g., location).
-  - …whether a person has a heart rate sensor connected. (It would also be helpful to be able to connect a heart rate sensor during the session, even later on.)
-  - …whether a person is currently disconnected.
+ - …how accurate the data is (e.g., location).
+ - …whether a person has a heart rate sensor connected. (It would also be helpful to be able to connect a heart rate sensor during the session, even later on.)
+ - …whether a person is currently disconnected.
 - Another nice-to-have feature would be the ability to click on individual users in the leaderboard during the session to view detailed information about them. Perhaps the view could also allow users to compare their own data with that of others right away.
 
 ## Conclusions from All Participants
@@ -305,7 +304,7 @@ From a technical standpoint, I really enjoyed being able to dive back into React
 
 Eight team members, nearly five days of development time, and bringing a shared app idea to life—that was our intensive and educational project at the start of the second semester, from which I personally gained a lot. The week was characterized by close team communication, a clear division of tasks, and many small coordination efforts that ultimately led to a fully functional final product. I found it particularly interesting to see how differently individual team members approached tasks—both in terms of content and methodology. In the process, I not only learned about different ways of thinking but also picked up practical coding tips and problem-solving strategies that will certainly help me in the future.
 
-At the beginning, my focus was on planning our database. Together  with Matthias, I evaluated various database types—such as  relational, NoSQL, and time-series databases—in terms of their suitability for  our use case. Based on these considerations, we decided to stick with a classic relational database, for which Matthias and I designed an initial ER diagram that we then discussed as a team and revised together. Even though this process took time, it allowed us to establish a clean, robust structure that later integrated almost seamlessly into NestJS. As the project progressed (once the technical structure of the database was in place), I focused more on the front end, particularly the secondary screen for user data that had not yet been worked on by my colleagues. There, I was able to independently develop initial components, especially in areas directly related to the database. For more complex problems, I relied on pair programming to find targeted solutions by leveraging the combined strengths of my colleagues.
+At the beginning, my focus was on planning our database. Together with Matthias, I evaluated various database types—such as relational, NoSQL, and time-series databases—in terms of their suitability for our use case. Based on these considerations, we decided to stick with a classic relational database, for which Matthias and I designed an initial ER diagram that we then discussed as a team and revised together. Even though this process took time, it allowed us to establish a clean, robust structure that later integrated almost seamlessly into NestJS. As the project progressed (once the technical structure of the database was in place), I focused more on the front end, particularly the secondary screen for user data that had not yet been worked on by my colleagues. There, I was able to independently develop initial components, especially in areas directly related to the database. For more complex problems, I relied on pair programming to find targeted solutions by leveraging the combined strengths of my colleagues.
 
 A particular challenge for me was also dealing with the limited timeframe while still ensuring clean, maintainable code. I learned how crucial it is to set sensible priorities early on in development—that is, to find the “right” order: What must work, what is optional, and what can be postponed if necessary? Striking this balance wasn’t always easy, but it was essential for reliably implementing all core functions. My attempt to technically integrate the safe area cleanly at the very end failed despite several approaches—but that’s exactly where I learned the most: Not every idea can be meaningfully implemented under time pressure, and a pragmatic approach is often more important than perfection in the details.
 
@@ -317,7 +316,7 @@ Programming Week was definitely a highlight for me. Working on a project like th
 
 I did a lot of pair programming, especially on the front end. That was really helpful for me, since it allowed me to get up to speed with the project and React more quickly. First, Caro and I started by figuring out how to connect the heart rate sensor via Bluetooth and read the data—it was a bit tricky at first, but then we quickly found a solution together, which was super motivating, especially on the first day. The entire project was also very well structured overall, because we started every day with a meeting to set the day’s goals. At first, I thought it would be really easy to finish by Friday if everything kept moving so quickly, but as is so often the case, you end up underestimating the stress of the final days. As I’ve mentioned before, I would have really liked to delve deeper into the backend and WebSockets, but unfortunately there just wasn’t enough time left—though I was able to contribute to almost every aspect of the frontend, which of course helped me improve my knowledge there as well.
 
-As a group, we really handled the entire project well. We  had fun, were stressed, and I think we all learned a lot in the process. The final product looked great during the presentation,  except maybe for a few minor bugs. I definitely learned a lot and would love to do this kind of project again,  even though a break after this week was very welcome. 
+As a group, we really handled the entire project well. We had fun, were stressed, and I think we all learned a lot in the process. The final product looked great during the presentation, except maybe for a few minor bugs. I definitely learned a lot and would love to do this kind of project again, even though a break after this week was very welcome. 
 
 ### Caroline
 
@@ -331,13 +330,13 @@ I think we handled this very well as a group; with the daily planning at the sta
 
 Wild Week was a truly interesting and exciting experience. Getting an entire project off the ground in less than 5 days was extremely stressful, but it was also really great to see what you can actually accomplish in such a short time when you really put your all into it. I also took away a lot from this week.
 
-For one thing, I hadn’t had any experience with Ionic in  combination with React up until then. I’d only used Ionic and Angular or React Native, but not both together. I also learned quite a bit about  using heart rate sensors, even though my experience in this area  was somewhat limited, since I was primarily responsible for the backend.  I would have loved to explore other areas as well, but given the time constraints, it’s understandable that this wasn’t really possible. During the week, I sometimes worked alone—for example, researching how the accelerometer in a cell phone works or setting up data storage on the backend via the appropriate endpoints—but I also did quite a bit of pair programming. On both sides. Even though I was already familiar with this technique from my bachelor’s program, it’s still always interesting to see how well pair programming works. Having another person next to you who can focus solely on what’s being written and immediately notice if you’ve forgotten something—or who can help you with problems—is very valuable, especially when not everyone on the team can work on their own task.
+For one thing, I hadn’t had any experience with Ionic in combination with React up until then. I’d only used Ionic and Angular or React Native, but not both together. I also learned quite a bit about using heart rate sensors, even though my experience in this area was somewhat limited, since I was primarily responsible for the backend. I would have loved to explore other areas as well, but given the time constraints, it’s understandable that this wasn’t really possible. During the week, I sometimes worked alone—for example, researching how the accelerometer in a cell phone works or setting up data storage on the backend via the appropriate endpoints—but I also did quite a bit of pair programming. On both sides. Even though I was already familiar with this technique from my bachelor’s program, it’s still always interesting to see how well pair programming works. Having another person next to you who can focus solely on what’s being written and immediately notice if you’ve forgotten something—or who can help you with problems—is very valuable, especially when not everyone on the team can work on their own task.
 
 All in all, I think Wild Week went really well. We set out to do a lot, but we managed to pull it off great. With the daily stand-ups, which we always held in the morning, we were able to set our goals each day and focus on them. It also really drove home why the MVP concept exists. I wouldn’t mind repeating a project like this again sometime.
 
 ### Jan
 
-It was an exciting week! Over the course of five days, we had lots of discussions, made decisions, and worked hard on the code. The result is a proof of concept that brings our interesting app idea to life. Overall, we’re very satisfied with this result.  However, the word “overall” comes with a slight reservation: Could we perhaps have gotten even more out of this week?
+It was an exciting week! Over the course of five days, we had lots of discussions, made decisions, and worked hard on the code. The result is a proof of concept that brings our interesting app idea to life. Overall, we’re very satisfied with this result. However, the word “overall” comes with a slight reservation: Could we perhaps have gotten even more out of this week?
 
 Our team spent a lot of time designing the app. Looking back, that time seems to me to have been well spent. It was important to develop an idea that we found exciting and meaningful. Only with this clear vision were we able to get started with enthusiasm. I see our weaknesses more in the division and prioritization of the work. We split the app’s features into backend and frontend and implemented them too independently of one another. This led to functions being implemented in the backend that ultimately weren’t used in the frontend. As mentioned in the chapter on CI/CD, we also put too much energy into our pipelines. Another problem with this division of labor was that the work wasn’t merged until late in the process, which meant we didn’t become aware of issues until it was too late. It probably would have made more sense for sub-teams to work on individual features end-to-end, so that the app could have grown incrementally.
 
@@ -345,7 +344,7 @@ Overall, however, it was a productive week during which we as a team not only ac
 
 ### Matthias
 
-Programming Week was a particularly exciting challenge, not  only because we had to build a working app in just a few days, but above all because, while there were clear requirements, the  specific implementation was completely open-ended. It was precisely this freedom that fostered  creativity within the team and allowed us to develop our own technical and  design solutions.
+Programming Week was a particularly exciting challenge, not only because we had to build a working app in just a few days, but above all because, while there were clear requirements, the specific implementation was completely open-ended. It was precisely this freedom that fostered creativity within the team and allowed us to develop our own technical and design solutions.
 
 At the start, we divided up the tasks within the team and agreed on potential technologies. It quickly became clear that my interest lay primarily in the UX area, which is why I focused more intensively on the dashboard as the central entry point, as well as other screens. In the days that followed, I worked on implementing key screens such as the WaitingScreen, as well as the QR code generation and sharing features, breaking them down into meaningful components. This also included an attempt to implement a QR code reader. I found pair programming particularly beneficial, as it noticeably eased the workload under time pressure while simultaneously introducing new perspectives. The week was intense, but that’s exactly what made it so educational. I realized how important it is to set priorities and manage time effectively. Teamwork also played a major role in this. Good coordination, paying attention to potential conflicts, and a respectful, supportive approach were key factors in enabling us to work efficiently while maintaining a pleasant atmosphere.
 

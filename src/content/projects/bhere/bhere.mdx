@@ -12,11 +12,11 @@ import { Image } from 'astro:assets';
 
 *Written by David Grünberger, Caroline Labres, Katharina Wurm, Jan Weiß, Sebastian Zettl, Andreas Kaiser, Felix Kargl and Matthias Frankowski*
 
-In the third semester of the Interactive Technologies master’s program (Mobile Masterclass), we undertook a major semester-long group project. As  an entire master’s class (8 people in total), we spent the  entire semester developing bHere, a social app that uses  game-like mechanics and consequences to motivate groups to put away their phones when  going out together.
+In the third semester of the Interactive Technologies master’s program (Mobile Masterclass), we undertook a major semester-long group project. As an entire master’s class (8 people in total), we spent the entire semester developing bHere, a social app that uses game-like mechanics and consequences to motivate groups to put away their phones when going out together.
 
 ## Project Brief
 
-The only requirement was that the project had to include a technical  challenge. After brainstorming three ideas, we decided to develop an app that encourages people to spend more quality time with their loved ones without looking at their phones. The technical challenge lay primarily in connecting the devices via Bluetooth, but also in creating a native, production-ready app.
+The only requirement was that the project had to include a technical challenge. After brainstorming three ideas, we decided to develop an app that encourages people to spend more quality time with their loved ones without looking at their phones. The technical challenge lay primarily in connecting the devices via Bluetooth, but also in creating a native, production-ready app.
 
 ### MVP
 
@@ -34,7 +34,7 @@ We also had lots of cool ideas for enhancing the app with features like mini-gam
 
 ### App
 
-The apps were each written natively, in Swift for iOS and Kotlin for  Android, to gain experience in native app development.
+The apps were each written natively, in Swift for iOS and Kotlin for Android, to gain experience in native app development.
 
 ### Website
 
@@ -49,8 +49,8 @@ We used the “Linear” software as a project management tool and to manage the
 import bhere6 from './bhere6.jpg';
 
 <figure>
-  <Image src={bhere6} alt="Example sprint in our Linear setup" />
-  <figcaption>Fig. 1: Example sprint in our Linear setup</figcaption>
+ <Image src={bhere6} alt="Example sprint in our Linear setup" />
+ <figcaption>Fig. 1: Example sprint in our Linear setup</figcaption>
 </figure>
 
 ## The Final Product
@@ -64,31 +64,31 @@ We implemented the MVP features and nice-to-haves as described, with the followi
 import bhere1 from './bhere1.jpg';
 
 <figure>
-  <Image src={bhere1} alt="Product teaser from the App Store" />
-  <figcaption>Fig. 2: Product teaser from the App Store</figcaption>
+ <Image src={bhere1} alt="Product teaser from the App Store" />
+ <figcaption>Fig. 2: Product teaser from the App Store</figcaption>
 </figure>
 
-When you open the app for the first time, you are guided through an onboarding process that briefly introduces the app. Here, you must also enter a  name to be used for yourself within the app. Finally, you arrive at the home screen (Fig. 3, left). Via  the profile icon in the top right corner, you can change the name you’ve set. Clicking the “Start New Session” button starts a  new group session and takes you to the New Session Screen (Fig. 3, center) –  however, only one person in the group needs to click this button.  Everyone else clicks “Join Session,” which opens the camera to  scan the generated QR code, which then also redirects you to the New  Session Screen. The “Go Solo” button leads to Solo Mode,  which is described in more detail below.
+When you open the app for the first time, you are guided through an onboarding process that briefly introduces the app. Here, you must also enter a name to be used for yourself within the app. Finally, you arrive at the home screen (Fig. 3, left). Via the profile icon in the top right corner, you can change the name you’ve set. Clicking the “Start New Session” button starts a new group session and takes you to the New Session Screen (Fig. 3, center) – however, only one person in the group needs to click this button. Everyone else clicks “Join Session,” which opens the camera to scan the generated QR code, which then also redirects you to the New Session Screen. The “Go Solo” button leads to Solo Mode, which is described in more detail below.
 
 The New Session Screen displays the current participants and the selected mode. The session “Host” (the person who clicked “Start New Session”) also has the option to select the mode (Fig. 3, right) and configure necessary settings (e.g., set the price per use for Group Jar mode).
 
 import bhere2 from './bhere2.jpg';
 
 <figure>
-  <Image src={bhere2} alt="iOS App Screenshots" />
-  <figcaption>Fig. 3: iOS App Screenshots</figcaption>
+ <Image src={bhere2} alt="iOS App Screenshots" />
+ <figcaption>Fig. 3: iOS App Screenshots</figcaption>
 </figure>
 
-As announced, there is also a solo mode. Clicking “Go Solo” on the home screen takes you to the New Focus Session screen (Fig. 4, left), which works like a Group Jar mode—so you have to set the price per use. During the session (Focus Session screen, Fig. 4, right), you can see the total usage count and how much money  you’ll have to pay into your own piggy bank.
+As announced, there is also a solo mode. Clicking “Go Solo” on the home screen takes you to the New Focus Session screen (Fig. 4, left), which works like a Group Jar mode—so you have to set the price per use. During the session (Focus Session screen, Fig. 4, right), you can see the total usage count and how much money you’ll have to pay into your own piggy bank.
 
 import bhere3 from './bhere3.jpg';
 
 <figure>
-  <Image src={bhere3} alt="iOS App Screenshots" />
-  <figcaption>Fig. 4: iOS App Screenshots</figcaption>
+ <Image src={bhere3} alt="iOS App Screenshots" />
+ <figcaption>Fig. 4: iOS App Screenshots</figcaption>
 </figure>
 
-Another exciting feature is starting Solo Mode by  placing the phone on a specific spot. We envision the  process for users as follows:
+Another exciting feature is starting Solo Mode by placing the phone on a specific spot. We envision the process for users as follows:
 
 1. User sits down at the desk.
 
@@ -98,8 +98,8 @@ Another exciting feature is starting Solo Mode by  placing the phone on a specif
 
 
 <figure class="video-wrapper">
-  <video controls="controls" src="/videos/nfc_solomodus.mp4"></video>
-  <figcaption>Video 1: Starting Solo Mode via NFC Tag</figcaption>
+ <video controls="controls" src="/videos/nfc_solomodus.mp4"></video>
+ <figcaption>Video 1: Starting Solo Mode via NFC Tag</figcaption>
 </figure>
 
 Technically, this works with an NFC tag that contains a deep link. For the 2026 project opening, we ordered 100 tags (NTAG215), programmed them, and gave them away. We have currently implemented this feature only for Android.
@@ -107,8 +107,8 @@ Technically, this works with an NFC tag that contains a deep link. For the 2026 
 import bhere4 from './bhere4.jpg';
 
 <figure>
-  <Image src={bhere4} alt="Android App Screenshots (Dark Mode Support)" />
-  <figcaption>Fig. 5: Android App Screenshots (Dark Mode Support)</figcaption>
+ <Image src={bhere4} alt="Android App Screenshots (Dark Mode Support)" />
+ <figcaption>Fig. 5: Android App Screenshots (Dark Mode Support)</figcaption>
 </figure>
 
 The app is available on both platforms in both Light Mode and Dark Mode. 
@@ -120,19 +120,19 @@ By participating in the project launch event, we were able to gather valuable us
 import bhere5 from './bhere5.jpg';
 
 <figure>
-  <Image src={bhere5} alt="One of our two booths at the project launch event" />
-  <figcaption>Fig. 6: One of our two booths at the project launch event</figcaption>
+ <Image src={bhere5} alt="One of our two booths at the project launch event" />
+ <figcaption>Fig. 6: One of our two booths at the project launch event</figcaption>
 </figure>
 
 ## Conclusion from all participants
 
-In the following section, we would like to share our conclusion and the  experiences we gained during this semester group project.
+In the following section, we would like to share our conclusion and the experiences we gained during this semester group project.
 
 ### David
 
 Working on bHere was an intense and educational experience for me. From a technical standpoint, implementing Bluetooth Low Energy communication was certainly the biggest hurdle. It took several iterations and a lot of research, which is why I’m all the more proud that we were ultimately able to get a functioning BLE mesh up and running.
 
-One important lesson for me was the challenge of developing simultaneously on two platforms. It quickly became clear that if details aren’t clearly defined in advance, they can end up being implemented differently on iOS and Android. As a result, the final weeks and days before the deadline were particularly intense, as we still had to iron out many of these minor inconsistencies. I had also underestimated the  release process—in particular,  preparing the store listing and the mandatory 14-day testing phase in the Google Play Store require more lead time than one might initially  expect.
+One important lesson for me was the challenge of developing simultaneously on two platforms. It quickly became clear that if details aren’t clearly defined in advance, they can end up being implemented differently on iOS and Android. As a result, the final weeks and days before the deadline were particularly intense, as we still had to iron out many of these minor inconsistencies. I had also underestimated the release process—in particular, preparing the store listing and the mandatory 14-day testing phase in the Google Play Store require more lead time than one might initially expect.
 
 ### Andreas
 
@@ -146,9 +146,9 @@ Looking back, I’m glad we were able to create such an innovative app with our 
 
 This group semester project was a very exciting challenge for me because we developed a complete app for iOS and Android as part of a large team and then actually released it. Compared to Wild Programming Week, I found it much more demanding because we simply had to coordinate our efforts over a long period of time. But overall, everything worked out well.
 
-To start, we first developed a backend for user registration, which wasn’t used in the end because we wanted to use the app offline. That was frustrating at first because it took up time, but of course it made sense. Then, pretty early on, I developed a website that I think turned out really well.  Otherwise, I helped out on the Android team and with merch for the  Vernissage projects. I found that the most exciting part, as it allowed me to  get to know Kotlin better.
+To start, we first developed a backend for user registration, which wasn’t used in the end because we wanted to use the app offline. That was frustrating at first because it took up time, but of course it made sense. Then, pretty early on, I developed a website that I think turned out really well. Otherwise, I helped out on the Android team and with merch for the Vernissage projects. I found that the most exciting part, as it allowed me to get to know Kotlin better.
 
-I really enjoyed the entire project, especially because it was a  very real-world and practical project. We were a good team and  held productive meetings. Everything worked out well, though not without its challenges.
+I really enjoyed the entire project, especially because it was a very real-world and practical project. We were a good team and held productive meetings. Everything worked out well, though not without its challenges.
 
 ### Caroline
 
@@ -162,7 +162,7 @@ Overall, the project reminded me once again how important clear communication wi
 
 ### Sebastian
 
-Even though we had Wild Programming Week in the second semester,  during which we had to develop an app within a week,  this semester project was still a completely new experience. Developing  an app over an entire semester made the whole process both easier  and more difficult. 
+Even though we had Wild Programming Week in the second semester, during which we had to develop an app within a week, this semester project was still a completely new experience. Developing an app over an entire semester made the whole process both easier and more difficult. 
 
 Thanks to the timeframe, we had significantly more time to develop, unlike during Wild Week. But this longer timeframe also made things harder, as it naturally increased the scope of the project. At the same time, it was also much harder to estimate the required workload, which led, for example, to us initially estimating the work packages as too small for a sprint. 
 
@@ -180,7 +180,7 @@ We can be proud that we have created a novel and truly useful application that r
 
 ### Katharina
 
-The “bHere” project was a particularly valuable experience for me.  In my role as project manager, I facilitated the  sprint meetings, represented the group to our  stakeholders (our master’s class instructors), and maintained an  overview of progress and open issues.
+The “bHere” project was a particularly valuable experience for me. In my role as project manager, I facilitated the sprint meetings, represented the group to our stakeholders (our master’s class instructors), and maintained an overview of progress and open issues.
 
 In addition, Caro and I were jointly responsible for iOS development. We worked closely together using pair programming, and our collaboration was very productive. The integration of BLE functionality was particularly exciting—thanks to David’s preliminary work, we were able to successfully integrate it into the iOS app. Getting BLE communication to work across platforms between iOS and Android, however, presented a technical challenge, as debugging the connection in particular proved to be no trivial matter.
 
@@ -192,7 +192,7 @@ Overall, I put a great deal of work and dedication into this project—both in t
 
 ### Matthias
 
-The project gave me an exciting insight into just how complex  the development of a mobile app can become when it’s  designed to work across platforms and be fully usable offline at the same time. I found it particularly exciting to work together as a team  to find a solution for our Bluetooth mesh system. Especially  because there was no existing solution for our use case.  I also tried to develop my own concept. Although it wasn’t fully developed yet and would have required more time, it helped me better understand the technical challenges and learn a lot from the approaches of the others on the team.
+The project gave me an exciting insight into just how complex the development of a mobile app can become when it’s designed to work across platforms and be fully usable offline at the same time. I found it particularly exciting to work together as a team to find a solution for our Bluetooth mesh system. Especially because there was no existing solution for our use case. I also tried to develop my own concept. Although it wasn’t fully developed yet and would have required more time, it helped me better understand the technical challenges and learn a lot from the approaches of the others on the team.
 
 I focused more intensively on implementing usage tracking on iOS. The goal was to better understand the app’s behavior during use and to be able to collect the relevant data. In doing so, I had to ensure that the information collected was as similar as possible to that on Android, so that usage remains comparable across platforms. This allowed me to delve deeper into the behavior of apps on iOS and better understand how apps work in the background and how such information can be meaningfully used for the further development of a product.
 
